@@ -10,16 +10,9 @@ ENV SRC_PATH /code
 RUN mkdir -p /app
 RUN curl -o /app/detect.sh https://detect.synopsys.com/detect.sh
 
-# Remove running detect
-RUN head -n -1 /app/detect.sh > temp.txt ; mv temp.txt /app/detect.sh
-RUN echo "get_detect" >> /app/detect.sh 
 RUN chmod +x /app/detect.sh
 
-RUN /app/detect.sh 
-
-RUN head -n -1 /app/detect.sh > temp.txt ; mv temp.txt /app/detect.sh
-RUN echo "run" >> /app/detect.sh 
-RUN chmod +x /app/detect.sh
+RUN /app/detect.sh --help
 
 ADD REPO .
 ADD TAGS .
