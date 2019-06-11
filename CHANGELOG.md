@@ -6,6 +6,9 @@ The version numbers are related to the version of blackduck in the image appende
 
 ## [Unreleased]
 
+### Changed
+- Bumped version to 5.4.0
+
 ### Added
 - Removed the patching of the initial script. 
   Showing --help is already enough to force a download of the specific version
