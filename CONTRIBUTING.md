@@ -134,5 +134,5 @@ Use the badge to sign-up.
 [![Slack](https://philips-software-slackin.now.sh/badge.svg)](https://philips-software-slackin.now.sh)
 
 [contribute]: CONTRIBUTING.md
-[github]: https://github.com/philips-software/blackduck/issues 
+[github]: https://github.com/philips-software/docker-blackduck/issues 
 [slack]: https://philips-software.slack.com/home

@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/philips-software/blackduck/workflows/build/badge.svg)](https://github.com/philips-software/docker-aws-ci/actions/)
+[![Build Status](https://github.com/philips-software/docker-blackduck/workflows/build/badge.svg)](https://github.com/philips-software/docker-blackduck/actions/)
 [![Slack](https://philips-software-slackin.now.sh/badge.svg)](https://philips-software-slackin.now.sh)
 
 # Docker images
@@ -45,7 +45,7 @@ Example:
 
 ```
 $ docker run philipssoftware/blackduck:5 cat REPO
-https://github.com/philips-software/blackduck/tree/facb2271e5a563e5d6f65ca3f475cefac37b8b6c
+https://github.com/philips-software/docker-blackduck/tree/facb2271e5a563e5d6f65ca3f475cefac37b8b6c
 ```
 
 ### TAGS
@@ -82,7 +82,7 @@ Currently this image only has java. Running a project with `yarn` or `npm` will 
 
 ## Issues
 
-- If you have an issue: report it on the [issue tracker](https://github.com/philips-software/blackduck/issues)
+- If you have an issue: report it on the [issue tracker](https://github.com/philips-software/docker-blackduck/issues)
 
 ## Author
 
