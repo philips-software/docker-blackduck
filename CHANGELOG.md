@@ -8,6 +8,7 @@ The version numbers are related to the version of blackduck in the image appende
 
 ### Changed
 - Bumped version to 5.4.0
+- Moved to Github Actions 
 
 ### Added
 - Adds code-owners file

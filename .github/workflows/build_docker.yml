@@ -1,0 +1,43 @@
+on: [push]
+
+name: build
+
+jobs:
+  build_blackduck_with_java:
+    name: Build blackduck with java 
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@master
+      with:
+        submodules: true
+
+    - name: Build BlackDuck Docker Images with java
+      run: |
+        ./ci/bin/docker_build_and_push.sh 5/java blackduck blackduck:5 blackduck:5.4 blackduck:5.4.0
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
+        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+  
+  build_blackduck_with_node:
+    name: Build blackduck with node 
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@master
+      with:
+        submodules: true
+
+    - name: Build BlackDuck Docker Images with node
+      run: |
+        ./ci/bin/docker_build_and_push.sh 5/node blackduck:node blackduck:5-node blackduck:5.4-node blackduck:5.4.0-node
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
+        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+

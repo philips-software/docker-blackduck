@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/philips-software/blackduck.svg?branch=master)](https://travis-ci.com/philips-software/blackduck)
+[![Build Status](https://github.com/philips-software/blackduck/workflows/build/badge.svg)](https://github.com/philips-software/docker-aws-ci/actions/)
 [![Slack](https://philips-software-slackin.now.sh/badge.svg)](https://philips-software-slackin.now.sh)
 
 # Docker images
