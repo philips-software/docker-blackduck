@@ -1,8 +1,11 @@
+ARG detect_latest_release_version=5.6.2
+
 FROM java:8 
 MAINTAINER Forest Keepers
 
-ENV DETECT_LATEST_RELEASE_VERSION 5.6.2
-ENV DETECT_VERSION_KEY 5.6.2
+ARG detect_latest_release_version
+ENV DETECT_LATEST_RELEASE_VERSION $detect_latest_release_version
+ENV DETECT_VERSION_KEY $detect_latest_release_version
 
 ENV SRC_PATH /code
 
