@@ -6,6 +6,7 @@
 This repo will contain docker images with [Blackduck](https://www.blackducksoftware.com/)
 
 Current versions available:
+
 ```
 .
 ├── 5
@@ -29,12 +30,22 @@ In order to analyse a project use the following structure.
 _Replace all <your-xxxxx> variables with your own variables_
 
 ``` bash
-docker run -v $(pwd):/code db /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.source.path=/code --detect.project.name=<your-project-name> --detect.project.version.name=<your-version>
+docker run -v $(pwd):/code philipssoftware/blackduck:5 /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.source.path=/code --detect.project.name=<your-project-name> --detect.project.version.name=<your-version>
+```
+### Air Gap 
+
+By setting setting the environment variable `DETECT_AIR_GAP` to `true` you can enable [Air Gap](https://synopsys.atlassian.net/wiki/spaces/INTDOCS/pages/88506397/Running+Synopsys+Detect+in+Air+Gap+Offline+and+Dry+Run+Modes). This eliminate the need for internet access that Detect requires to download those dependencies. Currently only the `gradle` inspector is supported. This mode is particularly useful when you are behind a corporate firewall which blocks connections to Synopsys Artifactory.
+
+Example:
+
+```bash
+docker run -e DETECT_AIR_GAP=true -v $(pwd):/code philipssoftware/blackduck:5 /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.source.path=/code --detect.project.name=<your-project-name> --detect.project.version.name=<your-version>
 ```
 
 ## Content
 
 The images obviously contain blackduck and java8, but also two other files:
+
 - `REPO`
 - `TAGS`
 
