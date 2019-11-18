@@ -43,3 +43,22 @@ jobs:
         DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
         GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
 
+  build_blackduck_with_golang:
+    name: Build blackduck with golang
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@master
+      with:
+        submodules: true
+
+    - name: Build BlackDuck Docker Images with golang
+      run: |
+        ./ci/bin/docker_build_and_push.sh 6/golang blackduck:golang blackduck:6-golang blackduck:6.0-golang blackduck:6.0.0-golang
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
+        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+
