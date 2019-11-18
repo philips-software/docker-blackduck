@@ -14,6 +14,12 @@ Current versions available:
 │   │   └── Dockerfile
 │   └── node
 │       └── Dockerfile
+├── 6
+│   ├── java
+│   │   └── Dockerfile
+│   └── node
+│       └── Dockerfile
+
 
 ```
 ## Usage
@@ -21,8 +27,8 @@ Current versions available:
 Images can be found on [https://hub.docker.com/r/philipssoftware/blackduck/](https://hub.docker.com/r/philipssoftware/blackduck/).
 
 ``` bash
-docker run philipssoftware/blackduck:5 /app/detect.sh --help
-docker run philipssoftware/blackduck:5 /app/detect.sh -hv 
+docker run philipssoftware/blackduck:6 /app/detect.sh --help
+docker run philipssoftware/blackduck:6 /app/detect.sh -hv 
 ```
 
 In order to analyse a project use the following structure.
@@ -30,7 +36,7 @@ In order to analyse a project use the following structure.
 _Replace all <your-xxxxx> variables with your own variables_
 
 ``` bash
-docker run -v $(pwd):/code philipssoftware/blackduck:5 /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.source.path=/code --detect.project.name=<your-project-name> --detect.project.version.name=<your-version>
+docker run -v $(pwd):/code philipssoftware/blackduck:6 /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.source.path=/code --detect.project.name=<your-project-name> --detect.project.version.name=<your-version>
 ```
 ### Air Gap 
 
@@ -39,7 +45,7 @@ By setting setting the environment variable `DETECT_AIR_GAP` to `true` you can e
 Example:
 
 ```bash
-docker run -e DETECT_AIR_GAP=true -v $(pwd):/code philipssoftware/blackduck:5 /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.source.path=/code --detect.project.name=<your-project-name> --detect.project.version.name=<your-version>
+docker run -e DETECT_AIR_GAP=true -v $(pwd):/code philipssoftware/blackduck:6 /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.source.path=/code --detect.project.name=<your-project-name> --detect.project.version.name=<your-version>
 ```
 
 ## Content
@@ -55,7 +61,7 @@ This file has a url to the REPO with specific commit-sha of the build.
 Example: 
 
 ```
-$ docker run philipssoftware/blackduck:5 cat REPO
+$ docker run philipssoftware/blackduck:6 cat REPO
 https://github.com/philips-software/docker-blackduck/tree/facb2271e5a563e5d6f65ca3f475cefac37b8b6c
 ```
 
@@ -64,19 +70,19 @@ https://github.com/philips-software/docker-blackduck/tree/facb2271e5a563e5d6f65c
 This contains all the similar tags at the point of creation. 
 
 ```
-$ docker run philipssoftware/blackduck:5 cat TAGS
-blackduck blackduck:5 blackduck:5.6 blackduck:5.6.2
+$ docker run philipssoftware/blackduck:6 cat TAGS
+blackduck blackduck:6 blackduck:6.0 blackduck:6.0.0
 ```
 
-You can use this to pin down a version of the container from an existing development build for production. When using `blackduck:5` for development. This ensures that you've got all security updates in your build. If you want to pin the version of your image down for production, you can use this file inside of the container to look for the most specific tag, the last one.
+You can use this to pin down a version of the container from an existing development build for production. When using `blackduck:6` for development. This ensures that you've got all security updates in your build. If you want to pin the version of your image down for production, you can use this file inside of the container to look for the most specific tag, the last one.
 
 ## Simple Tags
 
 ### blackduck
-- `blackduck`, `blackduck:5`, `blackduck:5.6`, `blackduck:5.6.2` [5/java/Dockerfile](5/java/Dockerfile)
+- `blackduck`, `blackduck:6`, `blackduck:6.0`, `blackduck:6.0.0` [6/java/Dockerfile](6/java/Dockerfile)
 
 ### blackduck with node
-- `blackduck:node`, `blackduck:5-node`, `blackduck:5.6-node`, `blackduck:5.6.2-node` [5/node/Dockerfile](5/node/Dockerfile)
+- `blackduck:node`, `blackduck:6-node`, `blackduck:6.0-node`, `blackduck:6.0.0-node` [6/node/Dockerfile](6/node/Dockerfile)
 
 ## Why
 

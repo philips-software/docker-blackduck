@@ -16,6 +16,7 @@ jobs:
     - name: Build BlackDuck Docker Images with java
       run: |
         ./ci/bin/docker_build_and_push.sh 5/java blackduck blackduck:5 blackduck:5.6 blackduck:5.6.2
+        ./ci/bin/docker_build_and_push.sh 6/java blackduck blackduck:6 blackduck:6.0 blackduck:6.0.0
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -35,6 +36,7 @@ jobs:
     - name: Build BlackDuck Docker Images with node
       run: |
         ./ci/bin/docker_build_and_push.sh 5/node blackduck:node blackduck:5-node blackduck:5.6-node blackduck:5.6.2-node
+        ./ci/bin/docker_build_and_push.sh 6/node blackduck:node blackduck:6-node blackduck:6.0-node blackduck:6.0.0-node
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
