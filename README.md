@@ -17,8 +17,10 @@ Current versions available:
 ├── 6
 │   ├── java
 │   │   └── Dockerfile
-│   └── node
-│       └── Dockerfile
+│   ├── node
+│   │    └── Dockerfile
+│   └── golang
+│       └── Dockerfile
 
 
 ```
@@ -84,6 +86,10 @@ You can use this to pin down a version of the container from an existing develop
 ### blackduck with node
 - `blackduck:node`, `blackduck:6-node`, `blackduck:6.0-node`, `blackduck:6.0.0-node` [6/node/Dockerfile](6/node/Dockerfile)
 
+### blackduck with golang
+- `blackduck:golang`, `blackduck:6-golang`, `blackduck:6.0-golang`, `blackduck:6.0.0-golang` [6/golang/Dockerfile](6/golang/Dockerfile)
+
+
 ## Why
 
 > Why do we have our own docker image definitions?
@@ -105,6 +111,7 @@ Currently this image only has java. Running a project with `yarn` or `npm` will 
 
 - Jeroen Knoops <jeroen.knoops@philips.com>
 - Heijden, Remco van der <remco.van.der.heijden@philips.com>
+- Andy Lo-A-Foe <andy.lo-a-foe@philips.com>
 
 ## License
 
