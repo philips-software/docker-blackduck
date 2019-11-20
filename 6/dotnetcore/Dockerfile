@@ -1,6 +1,6 @@
 ARG detect_latest_release_version=6.0.0
 
-FROM microsoft/dotnet:3.0.101-sdk
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0.101
 
 MAINTAINER Forest Keepers
 
