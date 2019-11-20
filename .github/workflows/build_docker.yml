@@ -62,3 +62,21 @@ jobs:
         DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
         GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
 
+build_blackduck_with_dotnetcore:
+    name: Build blackduck with dotnet core
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@master
+      with:
+        submodules: true
+
+    - name: Build BlackDuck Docker Images with dotnet core
+      run: |
+        ./ci/bin/docker_build_and_push.sh 6/dotnetcore blackduck:dotnetcore blackduck:6-dotnetcore blackduck:6.0-dotnetcore blackduck:6.0.0-dotnetcore
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
+        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
