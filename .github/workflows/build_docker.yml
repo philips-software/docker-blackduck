@@ -74,7 +74,7 @@ build_blackduck_with_dotnetcore:
 
     - name: Build BlackDuck Docker Images with dotnet core
       run: |
-        ./ci/bin/docker_build_and_push.sh 6/dotnetcore blackduck:dotnetcore blackduck:6-dotnetcore blackduck:6.0-dotnetcore blackduck:6.0.0-dotnetcore
+        ./ci/bin/docker_build_and_push.sh 6/dotnetcore blackduck:dotnetcore blackduck:6-dotnetcore blackduck:6-dotnetcore-3 blackduck:6.0-dotnetcore blackduck:6.0-dotnetcore-3.0 blackduck:6.0.0-dotnetcore blackduck:6.0.0-dotnetcore-3.0.101
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
