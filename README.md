@@ -11,20 +11,14 @@ Current versions available:
 .
 ├── 5
 │   ├── java
-│   │   └── Dockerfile
 │   └── node
-│       └── Dockerfile
 ├── 6
+│   ├── dotnetcore
+│   ├── golang
 │   ├── java
-│   │   └── Dockerfile
-│   ├── node
-│   │    └── Dockerfile
-│   └── golang
-│       └── Dockerfile
-│   └── dotnetcore
-│       └── Dockerfile
-
+│   └── node
 ```
+
 ## Usage
 
 Images can be found on [https://hub.docker.com/r/philipssoftware/blackduck/](https://hub.docker.com/r/philipssoftware/blackduck/).
