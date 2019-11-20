@@ -91,7 +91,7 @@ You can use this to pin down a version of the container from an existing develop
 - `blackduck:golang`, `blackduck:6-golang`, `blackduck:6.0-golang`, `blackduck:6.0.0-golang` [6/golang/Dockerfile](6/golang/Dockerfile)
 
 ### blackduck with dotnetcore
-- `blackduck:dotnetcore`, `blackduck:6-dotnetcore`, `blackduck:6.0-dotnetcore`, `blackduck:6.0.0-dotnetcore` [6/dotnetcore/Dockerfile](6/dotnetcore/Dockerfile)
+- `blackduck:dotnetcore`, `blackduck:6-dotnetcore`, `blackduck:6-dotnetcore-3`, `blackduck:6.0-dotnetcore`, `blackduck:6.0-dotnetcore-3.0`, `blackduck:6.0.0-dotnetcore`, `blackduck:6.0.0-dotnetcore-3.0.101`
 
 ## Why
 
