@@ -9,7 +9,7 @@ ENV DETECT_LATEST_RELEASE_VERSION $detect_latest_release_version
 ENV DETECT_VERSION_KEY $detect_latest_release_version
 
 RUN apt-get update \ 
-    && apt-get install -y openjdk-8-jre \
+    && apt-get -y install default-jre \
     && apt-get -q autoremove \
     && apt-get -q clean -y \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*.bin
