@@ -62,7 +62,7 @@ jobs:
         DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
         GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
 
-build_blackduck_with_dotnetcore:
+  build_blackduck_with_dotnetcore:
     name: Build blackduck with dotnet core
     runs-on: ubuntu-latest
 
