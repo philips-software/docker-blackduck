@@ -11,19 +11,14 @@ Current versions available:
 .
 ├── 5
 │   ├── java
-│   │   └── Dockerfile
 │   └── node
-│       └── Dockerfile
 ├── 6
+│   ├── dotnetcore
+│   ├── golang
 │   ├── java
-│   │   └── Dockerfile
-│   ├── node
-│   │    └── Dockerfile
-│   └── golang
-│       └── Dockerfile
-
-
+│   └── node
 ```
+
 ## Usage
 
 Images can be found on [https://hub.docker.com/r/philipssoftware/blackduck/](https://hub.docker.com/r/philipssoftware/blackduck/).
@@ -89,6 +84,8 @@ You can use this to pin down a version of the container from an existing develop
 ### blackduck with golang
 - `blackduck:golang`, `blackduck:6-golang`, `blackduck:6.0-golang`, `blackduck:6.0.0-golang` [6/golang/Dockerfile](6/golang/Dockerfile)
 
+### blackduck with dotnetcore
+- `blackduck:dotnetcore`, `blackduck:6-dotnetcore`, `blackduck:6-dotnetcore-3`, `blackduck:6.0-dotnetcore`, `blackduck:6.0-dotnetcore-3.0`, `blackduck:6.0.0-dotnetcore`, `blackduck:6.0.0-dotnetcore-3.0.101`
 
 ## Why
 
@@ -112,6 +109,7 @@ Currently this image only has java. Running a project with `yarn` or `npm` will 
 - Jeroen Knoops <jeroen.knoops@philips.com>
 - Heijden, Remco van der <remco.van.der.heijden@philips.com>
 - Andy Lo-A-Foe <andy.lo-a-foe@philips.com>
+- Sudheesh Subramannian <sudheesh.ps@philips.com>
 
 ## License
 
