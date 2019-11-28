@@ -8,18 +8,34 @@ ARG detect_latest_release_version
 ENV DETECT_LATEST_RELEASE_VERSION $detect_latest_release_version
 ENV DETECT_VERSION_KEY $detect_latest_release_version
 
-RUN apt-get update \ 
-    && apt-get -y install default-jre \
+# Install utilities
+RUN apt-get update
+RUN apt-get -y install wget
+RUN apt-get -y install unzip
+
+# Install airgap
+RUN wget https://sig-repo.synopsys.com/bds-integrations-release/com/synopsys/integration/synopsys-detect/$DETECT_VERSION_KEY/synopsys-detect-$DETECT_VERSION_KEY-air-gap-gradle-nuget.zip \
+    && unzip synopsys-detect-$DETECT_VERSION_KEY-air-gap-gradle-nuget.zip -o /airgap
+
+# Install JRE
+RUN apt-get -y install default-jre \
     && apt-get -q autoremove \
     && apt-get -q clean -y \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*.bin
 
+# Download detect script
 RUN mkdir -p /app
 RUN curl -o /app/detect.sh https://detect.synopsys.com/detect.sh
 
 RUN chmod +x /app/detect.sh
 
 RUN /app/detect.sh --help
+
+ADD /scripts/entrypoint.sh /app/entrypoint.sh
+
+RUN chmod +x /app/entrypoint.sh
+
+ENTRYPOINT [ "/app/entrypoint.sh" ]
 
 ADD REPO .
 ADD TAGS .
