@@ -17,7 +17,7 @@ RUN apt-get -y install unzip
 
 # Install airgap
 RUN wget https://sig-repo.synopsys.com/bds-integrations-release/com/synopsys/integration/synopsys-detect/$DETECT_VERSION_KEY/synopsys-detect-$DETECT_VERSION_KEY-air-gap-gradle-nuget.zip \
-    && unzip synopsys-detect-$DETECT_VERSION_KEY-air-gap-gradle-nuget.zip -o /airgap
+    && unzip synopsys-detect-$DETECT_VERSION_KEY-air-gap-gradle-nuget.zip -d /airgap
 
 # Install JRE
 RUN apt-get -y install default-jre \
