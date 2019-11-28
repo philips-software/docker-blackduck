@@ -35,7 +35,7 @@ RUN curl -SL --output dotnet.tar.gz https://dotnetcli.blob.core.windows.net/dotn
     && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
     && rm dotnet.tar.gz 
 
-ENV DETECT_DOTNET_PATH /usr/share/dotnet
+ENV DETECT_DOTNET_PATH /usr/share/dotnet/dotnet
 
 # Download detect script
 RUN mkdir -p /app
