@@ -13,10 +13,11 @@ Current versions available:
 │   ├── java
 │   └── node
 ├── 6
-│   ├── dotnetcore
 │   ├── golang
 │   ├── java
 │   └── node
+│   ├── dotnetcore-2.2.110
+│   ├── dotnetcore-3.0.101
 ```
 
 ## Usage
@@ -84,8 +85,11 @@ You can use this to pin down a version of the container from an existing develop
 ### blackduck with golang
 - `blackduck:golang`, `blackduck:6-golang`, `blackduck:6.0-golang`, `blackduck:6.0.0-golang` [6/golang/Dockerfile](6/golang/Dockerfile)
 
-### blackduck with dotnetcore
-- `blackduck:dotnetcore`, `blackduck:6-dotnetcore`, `blackduck:6-dotnetcore-3`, `blackduck:6.0-dotnetcore`, `blackduck:6.0-dotnetcore-3.0`, `blackduck:6.0.0-dotnetcore`, `blackduck:6.0.0-dotnetcore-3.0.101`
+### blackduck with dotnetcore-2.2.110
+- `blackduck:dotnetcore-2.2.110`, `blackduck:6-dotnetcore-2.2`, `blackduck:6.0-dotnetcore-2.2.110`, `blackduck:6.0.0-dotnetcore-2.2.110` [6/dotnetcore-2.2.110/Dockerfile](6/dotnetcore-2.2.110/Dockerfile)
+
+### blackduck with dotnetcore-3.0.101
+- `blackduck:dotnetcore`, `blackduck:6-dotnetcore`, `blackduck:6-dotnetcore-3`, `blackduck:6.0-dotnetcore`, `blackduck:6.0-dotnetcore-3.0`, `blackduck:6.0.0-dotnetcore`, `blackduck:6.0.0-dotnetcore-3.0.101` [6/dotnetcore-3.0.101/Dockerfile](6/dotnetcore-3.0.101/Dockerfile)
 
 ## Why
 
