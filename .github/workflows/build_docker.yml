@@ -62,7 +62,26 @@ jobs:
         DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
         GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
 
-  build_blackduck_with_dotnetcore:
+  build_blackduck_with_dotnetcore_2_2_110:
+    name: Build blackduck with dotnet core 2.2.110
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@master
+      with:
+        submodules: true
+
+    - name: Build BlackDuck Docker Images with dotnet core 2.2.110
+      run: |
+        ./ci/bin/docker_build_and_push.sh 6/dotnetcore-2.2.110 blackduck:dotnetcore-2.2.110 blackduck:6-dotnetcore-2.2 blackduck:6.0-dotnetcore-2.2.110 blackduck:6.0.0-dotnetcore-2.2.110
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
+        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+
+  build_blackduck_with_dotnetcore_3_0_101:
     name: Build blackduck with dotnet core
     runs-on: ubuntu-latest
 
@@ -74,7 +93,7 @@ jobs:
 
     - name: Build BlackDuck Docker Images with dotnet core
       run: |
-        ./ci/bin/docker_build_and_push.sh 6/dotnetcore blackduck:dotnetcore blackduck:6-dotnetcore blackduck:6-dotnetcore-3 blackduck:6.0-dotnetcore blackduck:6.0-dotnetcore-3.0 blackduck:6.0.0-dotnetcore blackduck:6.0.0-dotnetcore-3.0.101
+        ./ci/bin/docker_build_and_push.sh 6/dotnetcore-3.0.101 blackduck:dotnetcore blackduck:6-dotnetcore blackduck:6-dotnetcore-3 blackduck:6.0-dotnetcore blackduck:6.0-dotnetcore-3.0 blackduck:6.0.0-dotnetcore blackduck:6.0.0-dotnetcore-3.0.101
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
