@@ -22,7 +22,9 @@ if [[ "$https_proxy_settings" =~ $pattern ]]; then
         host=${BASH_REMATCH[5]}
         port=${BASH_REMATCH[7]}
         export GRADLE_OPTS="$GRADLE_OPTS -Dhttps.proxyHost=$host -Dhttps.proxyPort=$port"
+        export MAVEN_OPTS="$MAVEN_OPTS -Dhttps.proxyHost=$host -Dhttps.proxyPort=$port -X"
         echo "[entrypoint] Setting GRADLE_OPTS: $GRADLE_OPTS"
+        echo "[entrypoint] Setting MAVEN_OPTS: $MAVEN_OPTS"
 fi
 
 exec "$@"
