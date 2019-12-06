@@ -1,6 +1,6 @@
 ARG detect_latest_release_version=6.0.0
 
-FROM golang:1.13.4-stretch
+FROM golang:1.13.5-stretch
 
 MAINTAINER Forest Keepers
 
