@@ -16,7 +16,7 @@ jobs:
     - name: Build BlackDuck Docker Images with java
       run: |
         ./ci/bin/docker_build_and_push.sh 5/java blackduck blackduck:5 blackduck:5.6 blackduck:5.6.2
-        ./ci/bin/docker_build_and_push.sh 6/java blackduck blackduck:6 blackduck:6.0 blackduck:6.0.0
+        ./ci/bin/docker_build_and_push.sh 6/java blackduck blackduck:6 blackduck:6.1 blackduck:6.1.0
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -36,7 +36,7 @@ jobs:
     - name: Build BlackDuck Docker Images with node
       run: |
         ./ci/bin/docker_build_and_push.sh 5/node blackduck:node blackduck:5-node blackduck:5.6-node blackduck:5.6.2-node
-        ./ci/bin/docker_build_and_push.sh 6/node blackduck:node blackduck:6-node blackduck:6.0-node blackduck:6.0.0-node
+        ./ci/bin/docker_build_and_push.sh 6/node blackduck:node blackduck:6-node blackduck:6.1-node blackduck:6.1.0-node
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -55,7 +55,7 @@ jobs:
 
     - name: Build BlackDuck Docker Images with golang
       run: |
-        ./ci/bin/docker_build_and_push.sh 6/golang blackduck:golang blackduck:6-golang blackduck:6.0-golang blackduck:6.0.0-golang
+        ./ci/bin/docker_build_and_push.sh 6/golang blackduck:golang blackduck:6-golang blackduck:6.1-golang blackduck:6.1.0-golang
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -74,7 +74,7 @@ jobs:
 
     - name: Build BlackDuck Docker Images with dotnet core 2.2.110
       run: |
-        ./ci/bin/docker_build_and_push.sh 6/dotnetcore-2.2.110 blackduck:dotnetcore-2.2.110 blackduck:6-dotnetcore-2.2 blackduck:6.0-dotnetcore-2.2.110 blackduck:6.0.0-dotnetcore-2.2.110
+        ./ci/bin/docker_build_and_push.sh 6/dotnetcore-2.2.110 blackduck:dotnetcore-2.2.110 blackduck:6-dotnetcore-2.2 blackduck:6.1-dotnetcore-2.2.110 blackduck:6.1.0-dotnetcore-2.2.110
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -93,7 +93,7 @@ jobs:
 
     - name: Build BlackDuck Docker Images with dotnet core
       run: |
-        ./ci/bin/docker_build_and_push.sh 6/dotnetcore-3.0.101 blackduck:dotnetcore blackduck:6-dotnetcore blackduck:6-dotnetcore-3 blackduck:6.0-dotnetcore blackduck:6.0-dotnetcore-3.0 blackduck:6.0.0-dotnetcore blackduck:6.0.0-dotnetcore-3.0.101
+        ./ci/bin/docker_build_and_push.sh 6/dotnetcore-3.0.101 blackduck:dotnetcore blackduck:6-dotnetcore blackduck:6-dotnetcore-3 blackduck:6.1-dotnetcore blackduck:6.1-dotnetcore-3.0 blackduck:6.1.0-dotnetcore blackduck:6.1.0-dotnetcore-3.0.101
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'

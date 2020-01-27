@@ -7,6 +7,7 @@ The version numbers are related to the version of blackduck in the image appende
 ## [Unreleased]
 
 ### Changed
+- Bumped version to 6.1.0
 - Bumped version to 6.0.0
 - Bumped version to 5.6.2
 - Moved to Github Actions 
