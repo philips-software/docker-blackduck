@@ -1,0 +1,53 @@
+ARG detect_latest_release_version=6.1.0
+
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1.102
+
+MAINTAINER Forest Keepers
+
+ARG detect_latest_release_version
+ENV DETECT_LATEST_RELEASE_VERSION $detect_latest_release_version
+ENV DETECT_VERSION_KEY $detect_latest_release_version
+ENV DOTNET_RUNTIME_VERSION_2 2.1.16
+
+# Install utilities
+RUN apt-get update
+RUN apt-get -y install wget
+RUN apt-get -y install unzip
+
+# Install airgap
+RUN wget https://sig-repo.synopsys.com/bds-integrations-release/com/synopsys/integration/synopsys-detect/$DETECT_VERSION_KEY/synopsys-detect-$DETECT_VERSION_KEY-air-gap-gradle-nuget.zip \
+    && unzip synopsys-detect-$DETECT_VERSION_KEY-air-gap-gradle-nuget.zip -d /airgap
+
+# Install JRE
+RUN apt-get update && \
+    apt-get -y install default-jre  \
+    && apt-get -q autoremove \
+    && apt-get -q clean -y \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/*.bin
+
+# Install .NET Core 2.2 Runtime. The nuget_inspector requires .NET 2.x runtime.
+RUN curl -SL --output dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/Runtime/$DOTNET_VERSION_2/dotnet-runtime-$DOTNET_RUNTIME_VERSION_2-linux-x64.tar.gz \
+    && dotnet_sha512='b49046a3f5ca102f36407ef0505d333c6c431862ab5ce76b25a516b91eae07dd96dd80ab1b6f82c44d65ee4203f029e2597ca2eac9ee27fcd2a5a118ead7bd0f' \
+    && echo "$dotnet_sha512 dotnet.tar.gz" | sha512sum -c - \
+    && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
+    && rm dotnet.tar.gz
+
+
+# Download detect script
+RUN mkdir -p /app
+RUN curl -o /app/detect.sh https://detect.synopsys.com/detect.sh
+
+RUN chmod +x /app/detect.sh
+
+RUN /app/detect.sh --help
+
+ADD /scripts/entrypoint.sh /app/entrypoint.sh
+
+RUN chmod +x /app/entrypoint.sh
+
+ENTRYPOINT [ "/app/entrypoint.sh" ]
+
+ADD REPO .
+ADD TAGS .
+
+CMD /app/detect.sh --blackduck.hub.url="${HUB_URL}" --blackduck.hub.api.token="${HUB_TOKEN}" --blackduck.hub.trust.cert=true --detect.policy.check=true

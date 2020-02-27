@@ -18,6 +18,7 @@ Current versions available:
 │   └── node
 │   ├── dotnetcore-2.2.110
 │   ├── dotnetcore-3.0.101
+│   ├── dotnetcore-3.1.102
 ```
 
 ## Usage
@@ -89,7 +90,10 @@ You can use this to pin down a version of the container from an existing develop
 - `blackduck:dotnetcore-2.2.110`, `blackduck:6-dotnetcore-2.2`, `blackduck:6.1-dotnetcore-2.2.110`, `blackduck:6.1.0-dotnetcore-2.2.110` [6/dotnetcore-2.2.110/Dockerfile](6/dotnetcore-2.2.110/Dockerfile)
 
 ### blackduck with dotnetcore-3.0.101
-- `blackduck:dotnetcore`, `blackduck:6-dotnetcore`, `blackduck:6-dotnetcore-3`, `blackduck:6.1-dotnetcore`, `blackduck:6.1-dotnetcore-3.0`, `blackduck:6.1.0-dotnetcore`, `blackduck:6.1.0-dotnetcore-3.0.101` [6/dotnetcore-3.0.101/Dockerfile](6/dotnetcore-3.0.101/Dockerfile)
+- `blackduck:6.1-dotnetcore-3.0`, `blackduck:6.1.0-dotnetcore-3.0.101` [6/dotnetcore-3.0.101/Dockerfile](6/dotnetcore-3.0.101/Dockerfile)
+
+### blackduck with dotnetcore-3.1.102
+- `blackduck:dotnetcore`, `blackduck:6-dotnetcore`, `blackduck:6-dotnetcore-3`, `blackduck:6-dotnetcore-3.1`, `blackduck:6.1-dotnetcore`, `blackduck:6.1-dotnetcore-3.1`, `blackduck:6.1.0-dotnetcore`, `blackduck:6.1.0-dotnetcore-3.1.102` [6/dotnetcore-3.1.102/Dockerfile](6/dotnetcore-3.1.102/Dockerfile)
 
 ## Why
 
@@ -114,6 +118,7 @@ Currently this image only has java. Running a project with `yarn` or `npm` will 
 - Heijden, Remco van der <remco.van.der.heijden@philips.com>
 - Andy Lo-A-Foe <andy.lo-a-foe@philips.com>
 - Sudheesh Subramannian <sudheesh.ps@philips.com>
+- Prakash P
 
 ## License
 
