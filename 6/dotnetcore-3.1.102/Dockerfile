@@ -24,18 +24,17 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*.bin
 
 # Install .NET Core 2.2 Runtime. The nuget_inspector requires .NET 2.x runtime.
-RUN curl -SL --output dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/Runtime/$DOTNET_VERSION_2/dotnet-runtime-$DOTNET_RUNTIME_VERSION_2-linux-x64.tar.gz \
+RUN curl -SL --output dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/Runtime/$DOTNET_RUNTIME_VERSION_2/dotnet-runtime-$DOTNET_RUNTIME_VERSION_2-linux-x64.tar.gz \
     && dotnet_sha512='b49046a3f5ca102f36407ef0505d333c6c431862ab5ce76b25a516b91eae07dd96dd80ab1b6f82c44d65ee4203f029e2597ca2eac9ee27fcd2a5a118ead7bd0f' \
     && echo "$dotnet_sha512 dotnet.tar.gz" | sha512sum -c - \
     && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
     && rm dotnet.tar.gz
 
-
 # Download detect script
 RUN mkdir -p /app \
-      curl -o /app/detect.sh https://detect.synopsys.com/detect.sh \
-      chmod +x /app/detect.sh \
-      /app/detect.sh --help
+    && curl -o /app/detect.sh https://detect.synopsys.com/detect.sh \
+    && chmod +x /app/detect.sh \
+    && /app/detect.sh --help
 
 ADD /scripts/entrypoint.sh /app/entrypoint.sh
 
