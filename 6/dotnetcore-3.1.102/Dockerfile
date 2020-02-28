@@ -10,9 +10,7 @@ ENV DETECT_VERSION_KEY $detect_latest_release_version
 ENV DOTNET_RUNTIME_VERSION_2 2.1.16
 
 # Install utilities
-RUN apt-get update
-RUN apt-get -y install wget
-RUN apt-get -y install unzip
+RUN apt-get update -y && apt-get install -y wget unzip
 
 # Install airgap
 RUN wget https://sig-repo.synopsys.com/bds-integrations-release/com/synopsys/integration/synopsys-detect/$DETECT_VERSION_KEY/synopsys-detect-$DETECT_VERSION_KEY-air-gap-gradle-nuget.zip \
@@ -34,12 +32,10 @@ RUN curl -SL --output dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/Runti
 
 
 # Download detect script
-RUN mkdir -p /app
-RUN curl -o /app/detect.sh https://detect.synopsys.com/detect.sh
-
-RUN chmod +x /app/detect.sh
-
-RUN /app/detect.sh --help
+RUN mkdir -p /app \
+      curl -o /app/detect.sh https://detect.synopsys.com/detect.sh \
+      chmod +x /app/detect.sh \
+      /app/detect.sh --help
 
 ADD /scripts/entrypoint.sh /app/entrypoint.sh
 
