@@ -9,16 +9,13 @@ Current versions available:
 
 ```
 .
-├── 5
-│   ├── java
-│   └── node
 ├── 6
 │   ├── golang
 │   ├── java
-│   └── node
+│   ├── node
 │   ├── dotnetcore-2.2.110
 │   ├── dotnetcore-3.0.101
-│   ├── dotnetcore-3.1.102
+│   └── dotnetcore-3.1.102
 ```
 
 ## Usage
