@@ -9,8 +9,20 @@ RUN cd /airgap \
     && wget https://sig-repo.synopsys.com/bds-integrations-release/com/synopsys/integration/synopsys-detect/$DETECT_VERSION_KEY/synopsys-detect-$DETECT_VERSION_KEY-air-gap.zip \
     && unzip synopsys-detect-$DETECT_VERSION_KEY-air-gap.zip
 
-FROM java:8 
-MAINTAINER Forest Keepers
+
+FROM openjdk:8u201-jdk-alpine3.9
+MAINTAINER Forest Keepers <Jeroen.knoops@philips.com>
+
+RUN apk --no-cache add \
+      curl \
+      jq \
+      git \
+      wget \
+      openssl \
+      bash \
+      netcat-openbsd \
+      net-tools && \
+    rm -rf /var/cache/apk/*
 
 ARG detect_latest_release_version
 ARG MAVEN_VERSION=3.6.3
@@ -21,6 +33,8 @@ ENV DETECT_LATEST_RELEASE_VERSION $detect_latest_release_version
 ENV DETECT_VERSION_KEY $detect_latest_release_version
 
 ENV SRC_PATH /code
+
+USER root
 
 RUN wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz https://www-us.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
     && wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512 https://www.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512 \

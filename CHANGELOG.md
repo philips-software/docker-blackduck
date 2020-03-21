@@ -13,6 +13,7 @@ The version numbers are related to the version of blackduck in the image appende
 - Moved to Github Actions 
 
 ### Added
+- Add nc tool
 - Adds .net core support
 - Adds code-owners file
 - Removed the patching of the initial script. 

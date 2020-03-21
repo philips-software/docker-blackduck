@@ -10,7 +10,7 @@ ENV DETECT_VERSION_KEY $detect_latest_release_version
 ENV DOTNET_RUNTIME_VERSION_2 2.1.16
 
 # Install utilities
-RUN apt-get update -y && apt-get install -y wget unzip
+RUN apt-get update -y && apt-get install -y wget unzip netcat-openbsd
 
 # Install airgap
 RUN wget https://sig-repo.synopsys.com/bds-integrations-release/com/synopsys/integration/synopsys-detect/$DETECT_VERSION_KEY/synopsys-detect-$DETECT_VERSION_KEY-air-gap-gradle-nuget.zip \
