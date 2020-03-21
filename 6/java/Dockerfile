@@ -22,12 +22,10 @@ ENV DETECT_VERSION_KEY $detect_latest_release_version
 
 ENV SRC_PATH /code
 
-RUN apk --no-cache add \
-      jq && \
-      openssl && \
+RUN apt-get update && \
+    apt-get install -y \
       netcat-openbsd && \
-      net-tools && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/lib/apt/lists/*
 
 RUN wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz https://www-us.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
     && wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512 https://www.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512 \

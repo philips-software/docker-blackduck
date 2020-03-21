@@ -11,7 +11,7 @@ RUN apt-get update && \
       git \
       wget \
       openssl \
-      netcat-openbsd && \
+      netcat-openbsd \
       bash \
       net-tools \
       default-jdk && \

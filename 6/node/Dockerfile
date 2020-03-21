@@ -10,12 +10,10 @@ ENV DETECT_VERSION_KEY $detect_latest_release_version
 
 ENV SRC_PATH /code
 
-RUN apk --no-cache add \
-      jq && \
-      openssl && \
+RUN apt-get update && \
+    apt-get install -y \
       netcat-openbsd && \
-      net-tools && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /app
 RUN curl -o /app/detect.sh https://detect.synopsys.com/detect.sh
