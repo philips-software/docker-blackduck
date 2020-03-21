@@ -22,6 +22,8 @@ ENV DETECT_VERSION_KEY $detect_latest_release_version
 
 ENV SRC_PATH /code
 
+USER root
+
 RUN apt-get update && \
     apt-get install -y \
       netcat-openbsd && \
