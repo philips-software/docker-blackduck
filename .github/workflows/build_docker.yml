@@ -6,117 +6,101 @@ jobs:
   build_blackduck_with_java:
     name: Build blackduck with java 
     runs-on: ubuntu-latest
-
     steps:
-
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
-
+    - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with java
-      run: |
-        ./ci/bin/docker_build_and_push.sh 5/java blackduck blackduck:5 blackduck:5.6 blackduck:5.6.2
-        ./ci/bin/docker_build_and_push.sh 6/java blackduck blackduck:6 blackduck:6.1 blackduck:6.1.0
+      uses: philips-software/docker-ci-scripts@v2.0.1
+      with:
+        dockerfile: 6/java
+        image-name: blackduck
+        tags: latest 6 6.1 6.1.0
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
-        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
   
   build_blackduck_with_node:
     name: Build blackduck with node 
     runs-on: ubuntu-latest
-
     steps:
-
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
-
+    - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with node
-      run: |
-        ./ci/bin/docker_build_and_push.sh 5/node blackduck:node blackduck:5-node blackduck:5.6-node blackduck:5.6.2-node
-        ./ci/bin/docker_build_and_push.sh 6/node blackduck:node blackduck:6-node blackduck:6.1-node blackduck:6.1.0-node
+      uses: philips-software/docker-ci-scripts@v2.0.1
+      with:
+        dockerfile: 6/node
+        image-name: blackduck
+        tags: node 6-node 6.1-node 6.1.0-node
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
-        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
 
   build_blackduck_with_golang:
     name: Build blackduck with golang
     runs-on: ubuntu-latest
-
     steps:
-
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
-
+    - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with golang
-      run: |
-        ./ci/bin/docker_build_and_push.sh 6/golang blackduck:golang blackduck:6-golang blackduck:6.1-golang blackduck:6.1.0-golang
+      uses: philips-software/docker-ci-scripts@v2.0.1
+      with:
+        dockerfile: 6/golang
+        image-name: blackduck
+        tags: golang 6-golang 6.1-golang 6.1.0-golang
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
-        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
 
   build_blackduck_with_dotnetcore_2_2_110:
     name: Build blackduck with dotnet core 2.2.110
     runs-on: ubuntu-latest
-
     steps:
-
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
-
+    - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with dotnet core 2.2.110
-      run: |
-        ./ci/bin/docker_build_and_push.sh 6/dotnetcore-2.2.110 blackduck:dotnetcore-2.2.110 blackduck:6-dotnetcore-2.2 blackduck:6.1-dotnetcore-2.2.110 blackduck:6.1.0-dotnetcore-2.2.110
+      uses: philips-software/docker-ci-scripts@v2.0.1
+      with:
+        dockerfile: 6/dotnetcore-2.2.110
+        image-name: blackduck
+        tags: dotnetcore-2.2.110 6-dotnetcore-2.2 6.1-dotnetcore-2.2.110 6.1.0-dotnetcore-2.2.110
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
-        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
 
   build_blackduck_with_dotnetcore_3_0_101:
     name: Build blackduck with dotnet core 3.0
     runs-on: ubuntu-latest
-
     steps:
-
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
-
+    - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with dotnet core
-      run: |
-        ./ci/bin/docker_build_and_push.sh 6/dotnetcore-3.0.101 blackduck:6.1-dotnetcore-3.0 blackduck:6.1.0-dotnetcore-3.0.101
+      uses: philips-software/docker-ci-scripts@v2.0.1
+      with:
+        dockerfile: 6/dotnetcore-3.0.101
+        image-name: blackduck
+        tags: 6.1-dotnetcore-3.0 6.1.0-dotnetcore-3.0.101
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
-        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
-
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
 
   build_blackduck_with_dotnetcore_3_1_102:
     name: Build blackduck with dotnet core 3.1
     runs-on: ubuntu-latest
-
     steps:
-
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
-
+    - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with dotnet core
-      run: |
-        ./ci/bin/docker_build_and_push.sh 6/dotnetcore-3.1.102 blackduck:dotnetcore blackduck:6-dotnetcore blackduck:6-dotnetcore-3 blackduck:6-dotnetcore-3.1 blackduck:6.1-dotnetcore blackduck:6.1-dotnetcore-3.1 blackduck:6.1.0-dotnetcore blackduck:6.1.0-dotnetcore-3.1.102
+      uses: philips-software/docker-ci-scripts@v2.0.1
+      with:
+        dockerfile: 6/dotnetcore-3.1.102
+        image-name: blackduck
+        tags: dotnetcore 6-dotnetcore 6-dotnetcore-3 6-dotnetcore-3.1 6.1-dotnetcore 6.1-dotnetcore-3.1 6.1.0-dotnetcore 6.1.0-dotnetcore-3.1.102
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
-        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
-
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
