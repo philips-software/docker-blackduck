@@ -13,7 +13,8 @@ jobs:
       with:
         dockerfile: 6/java
         image-name: blackduck
-        tags: latest 6 6.1 6.1.0
+        push-branch: switch-to-older-java
+        tags: java-revert 
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
