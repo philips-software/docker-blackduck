@@ -1,4 +1,4 @@
-ARG detect_latest_release_version=6.1.0
+ARG detect_latest_release_version=6.2.1
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1.102
 
