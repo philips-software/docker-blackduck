@@ -10,19 +10,16 @@ RUN cd /airgap \
     && unzip synopsys-detect-$DETECT_VERSION_KEY-air-gap.zip
 
 
-FROM openjdk:8u201-jdk-alpine3.9
+FROM openjdk:8 
 MAINTAINER Forest Keepers <Jeroen.knoops@philips.com>
 
-RUN apk --no-cache add \
-      curl \
-      jq \
-      git \
-      wget \
-      openssl \
-      bash \
-      netcat-openbsd \
-      net-tools && \
-    rm -rf /var/cache/apk/*
+RUN apt-get update && apt-get install -y \
+    curl \
+    jq \
+    git \
+    wget \
+    netcat \
+ && rm -rf /var/lib/apt/lists/*
 
 ARG detect_latest_release_version
 ARG MAVEN_VERSION=3.6.3
