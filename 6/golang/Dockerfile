@@ -1,4 +1,4 @@
-ARG detect_latest_release_version=6.1.0
+ARG detect_latest_release_version=6.2.1
 
 FROM golang:1.13.5-stretch
 
