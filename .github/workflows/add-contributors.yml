@@ -1,0 +1,35 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  updateContributors:
+    runs-on: ubuntu-latest
+    container: node:12-alpine3.11
+    steps:
+      - run: apk add bash git python3 py3-pip
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Update README 
+        run: |
+          echo "{ \"repository\":\"${repository}\" }" > package.json
+          npx contributor-faces@v1.0.3 . --exclude '*github*'
+          rm package.json
+          git add README.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v2
+        with:
+          commit-message: update contributors
+          title: Update contributors
+          body: Credit new contributors to README.md
+          branch: update-contributors
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+

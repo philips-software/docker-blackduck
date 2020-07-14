@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with java
-      uses: philips-software/docker-ci-scripts@v2.1.0
+      uses: philips-software/docker-ci-scripts@v2.2.2
       with:
         dockerfile: 6/java
         image-name: blackduck
@@ -26,7 +26,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with node
-      uses: philips-software/docker-ci-scripts@v2.1.0
+      uses: philips-software/docker-ci-scripts@v2.2.2
       with:
         dockerfile: 6/node
         image-name: blackduck
@@ -43,7 +43,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with golang
-      uses: philips-software/docker-ci-scripts@v2.1.0
+      uses: philips-software/docker-ci-scripts@v2.2.2
       with:
         dockerfile: 6/golang
         image-name: blackduck
@@ -60,7 +60,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with dotnet core 2.2.110
-      uses: philips-software/docker-ci-scripts@v2.1.0
+      uses: philips-software/docker-ci-scripts@v2.2.2
       with:
         dockerfile: 6/dotnetcore-2.2.110
         image-name: blackduck
@@ -77,7 +77,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with dotnet core
-      uses: philips-software/docker-ci-scripts@v2.1.0
+      uses: philips-software/docker-ci-scripts@v2.2.2
       with:
         dockerfile: 6/dotnetcore-3.0.101
         image-name: blackduck
@@ -94,7 +94,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build BlackDuck Docker Images with dotnet core
-      uses: philips-software/docker-ci-scripts@v2.1.0
+      uses: philips-software/docker-ci-scripts@v2.2.2
       with:
         dockerfile: 6/dotnetcore-3.1.102
         image-name: blackduck
