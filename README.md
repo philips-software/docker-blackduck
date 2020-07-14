@@ -109,17 +109,13 @@ Currently this image only has java. Running a project with `yarn` or `npm` will 
 
 - If you have an issue: report it on the [issue tracker](https://github.com/philips-software/docker-blackduck/issues)
 
-## Author
-
-- Jeroen Knoops <jeroen.knoops@philips.com>
-- Heijden, Remco van der <remco.van.der.heijden@philips.com>
-- Andy Lo-A-Foe <andy.lo-a-foe@philips.com>
-- Sudheesh Subramannian <sudheesh.ps@philips.com>
-- Prakash P
-
 ## License
 
 License is MIT. See [LICENSE file](LICENSE.md)
+
+## Contributors
+
+[//]: contributor-faces
 
 ## Philips Forest
 
