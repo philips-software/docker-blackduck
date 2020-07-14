@@ -17,7 +17,7 @@ jobs:
       - name: Update README 
         run: |
           echo "{ \"repository\":\"${repository}\" }" > package.json
-          npx contributor-faces . --exclude '*github*'
+          npx contributor-faces@v1.0.3 . --exclude '*github*'
           rm package.json
           git add README.md
         env:
