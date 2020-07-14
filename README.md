@@ -116,6 +116,15 @@ License is MIT. See [LICENSE file](LICENSE.md)
 ## Contributors
 
 [//]: contributor-faces
+<a href="https://github.com/JeroenKnoops"><img src="https://avatars1.githubusercontent.com/u/10019?v=4" title="JeroenKnoops" width="80" height="80"></a>
+<a href="https://github.com/loafoe"><img src="https://avatars2.githubusercontent.com/u/14123216?v=4" title="loafoe" width="80" height="80"></a>
+<a href="https://github.com/prakashguru"><img src="https://avatars3.githubusercontent.com/u/11089125?v=4" title="prakashguru" width="80" height="80"></a>
+<a href="https://github.com/bartgolsteijn"><img src="https://avatars0.githubusercontent.com/u/3263880?v=4" title="bartgolsteijn" width="80" height="80"></a>
+<a href="https://github.com/dmixonphilips"><img src="https://avatars0.githubusercontent.com/u/56551812?v=4" title="dmixonphilips" width="80" height="80"></a>
+<a href="https://github.com/sudheeshps"><img src="https://avatars1.githubusercontent.com/u/40300928?v=4" title="sudheeshps" width="80" height="80"></a>
+<a href="https://github.com/marcel-dias"><img src="https://avatars2.githubusercontent.com/u/233598?v=4" title="marcel-dias" width="80" height="80"></a>
+
+[//]: contributor-faces
 
 ## Philips Forest
 
