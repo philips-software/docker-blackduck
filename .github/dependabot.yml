@@ -11,7 +11,7 @@ updates:
       interval: "daily"
 
   - package-ecosystem: "docker"
-    directory: "/6/dotnetcore-3.1.102/"
+    directory: "/6/dotnetcore-3.1.302/"
     schedule:
       interval: "daily"
 
