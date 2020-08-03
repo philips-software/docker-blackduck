@@ -1,4 +1,4 @@
-ARG detect_latest_release_version=6.3.0
+ARG detect_latest_release_version=6.4.0
 
 FROM alpine:latest AS builder
 ARG detect_latest_release_version

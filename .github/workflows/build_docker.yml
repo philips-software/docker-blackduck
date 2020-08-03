@@ -13,7 +13,7 @@ jobs:
       with:
         dockerfile: 6/java
         image-name: blackduck
-        tags: latest 6 6.3 6.3.0
+        tags: latest 6 6.4 6.4.0
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -30,7 +30,7 @@ jobs:
       with:
         dockerfile: 6/node
         image-name: blackduck
-        tags: node 6-node 6.3-node 6.3.0-node
+        tags: node 6-node 6.4-node 6.4.0-node
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -47,7 +47,7 @@ jobs:
       with:
         dockerfile: 6/golang
         image-name: blackduck
-        tags: golang 6-golang 6.3-golang 6.3.0-golang
+        tags: golang 6-golang 6.4-golang 6.4.0-golang
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -64,7 +64,7 @@ jobs:
       with:
         dockerfile: 6/dotnetcore-2.2.110
         image-name: blackduck
-        tags: dotnetcore-2.2.110 6-dotnetcore-2.2 6.3-dotnetcore-2.2.110 6.3.0-dotnetcore-2.2.110
+        tags: dotnetcore-2.2.110 6-dotnetcore-2.2 6.4-dotnetcore-2.2.110 6.4.0-dotnetcore-2.2.110
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -72,7 +72,7 @@ jobs:
         GITHUB_ORGANIZATION: philips-software
 
   build_blackduck_with_dotnetcore_3_0_101:
-    name: Build blackduck with dotnet core 3.0
+    name: Build blackduck with dotnet core 3.0.101
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -81,7 +81,7 @@ jobs:
       with:
         dockerfile: 6/dotnetcore-3.0.101
         image-name: blackduck
-        tags: 6.3-dotnetcore-3.0 6.3.0-dotnetcore-3.0.101
+        tags: 6.4-dotnetcore-3.0 6.4.0-dotnetcore-3.0.101
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -89,7 +89,7 @@ jobs:
         GITHUB_ORGANIZATION: philips-software
 
   build_blackduck_with_dotnetcore_3_1_102:
-    name: Build blackduck with dotnet core 3.1
+    name: Build blackduck with dotnet core 3.1.102
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -98,7 +98,24 @@ jobs:
       with:
         dockerfile: 6/dotnetcore-3.1.102
         image-name: blackduck
-        tags: dotnetcore 6-dotnetcore 6-dotnetcore-3 6-dotnetcore-3.1 6.3-dotnetcore 6.3-dotnetcore-3.1 6.3.0-dotnetcore 6.3.0-dotnetcore-3.1.102
+        tags: 6.4.0-dotnetcore-3.1.102
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
+
+  build_blackduck_with_dotnetcore_3_1_302:
+    name: Build blackduck with dotnet core 3.1.302
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build BlackDuck Docker Images with dotnet core
+      uses: philips-software/docker-ci-scripts@v2.2.2
+      with:
+        dockerfile: 6/dotnetcore-3.1.302
+        image-name: blackduck
+        tags: dotnetcore 6-dotnetcore 6-dotnetcore-3 6-dotnetcore-3.1 6.4-dotnetcore 6.4-dotnetcore-3.1 6.4.0-dotnetcore 6.4.0-dotnetcore-3.1.302
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'

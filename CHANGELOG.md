@@ -7,6 +7,11 @@ The version numbers are related to the version of blackduck in the image appende
 ## [Unreleased]
 
 ### Changed
+- Bumped node version to 14.7.0
+- Bumped golang version to 1.14.6
+- Add dotnetcore-3.1.302
+- Bumped detect version to 6.4.0
+- Bumped detect version to 6.3.0
 - Bumped detect version to 6.2.1
 - Bumped version to 6.1.0
 - Bumped version to 6.0.0
