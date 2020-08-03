@@ -10,7 +10,7 @@ RUN cd /airgap \
     && unzip synopsys-detect-$DETECT_VERSION_KEY-air-gap.zip
 
 
-FROM openjdk:8 
+FROM openjdk:14 
 MAINTAINER Forest Keepers <Jeroen.knoops@philips.com>
 
 RUN apt-get update && apt-get install -y \
