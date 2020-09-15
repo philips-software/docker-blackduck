@@ -36,7 +36,7 @@ RUN mkdir -p /app \
     && chmod +x /app/detect.sh \
     && /app/detect.sh --help
 
-ADD /scripts/entrypoint.sh /app/entrypoint.sh
+ADD /6/dotnetcore-3.1.102/scripts/entrypoint.sh /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh
 
