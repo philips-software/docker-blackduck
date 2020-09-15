@@ -4,9 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 The version numbers are related to the version of blackduck in the image appended with an internal version number.
 
-## [Unreleased]
-
 ### Changed
+- Bumped detect version to 6.5.0
 - Bumped node version to 14.7.0
 - Bumped golang version to 1.15
 - Add dotnetcore-3.1.302
