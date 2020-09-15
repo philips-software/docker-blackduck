@@ -29,7 +29,7 @@ RUN chmod +x /app/detect.sh
 
 RUN /app/detect.sh --help
 
-ADD /scripts/entrypoint.sh /app/entrypoint.sh
+ADD /6/dotnetcore-3.0.101/scripts/entrypoint.sh /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh
 

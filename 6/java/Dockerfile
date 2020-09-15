@@ -52,7 +52,7 @@ RUN chmod +x /app/detect.sh
 
 RUN /app/detect.sh --help
 
-ADD /scripts/entrypoint.sh /app/entrypoint.sh
+ADD /6/java/scripts/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 ENTRYPOINT [ "/app/entrypoint.sh" ]
 
