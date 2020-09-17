@@ -25,3 +25,6 @@ The version numbers are related to the version of blackduck in the image appende
 - Removed the patching of the initial script. 
   Showing --help is already enough to force a download of the specific version
 - Initial commit for Blackduck
+
+### Unreleased
+- Add docker image with docker inspector

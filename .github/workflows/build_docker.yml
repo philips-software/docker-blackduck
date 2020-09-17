@@ -121,3 +121,20 @@ jobs:
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
         DOCKER_ORGANIZATION: philipssoftware
         GITHUB_ORGANIZATION: philips-software
+
+  build_blackduck_with_docker_detector:
+    name: Build blackduck with docker detector
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build BlackDuck Docker Images with docker detector
+      uses: philips-software/docker-ci-scripts@v3.0.0
+      with:
+        dockerfile: 6/docker
+        image-name: blackduck
+        tags: docker 6-docker 6.5-docker 6.5.0-docker
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software

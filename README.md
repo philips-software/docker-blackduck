@@ -17,6 +17,7 @@ Current versions available:
 │   ├── dotnetcore-3.0.101
 │   ├── dotnetcore-3.1.102
 │   └── dotnetcore-3.1.302
+│   └── docker
 ```
 
 ## Usage
@@ -25,17 +26,31 @@ Images can be found on [https://hub.docker.com/r/philipssoftware/blackduck/](htt
 
 ``` bash
 docker run philipssoftware/blackduck:6 /app/detect.sh --help
-docker run philipssoftware/blackduck:6 /app/detect.sh -hv 
+docker run philipssoftware/blackduck:6 /app/detect.sh -hv
 ```
 
 In order to analyse a project use the following structure.
 
 _Replace all <your-xxxxx> variables with your own variables_
 
+###### Source code scan
 ``` bash
 docker run -v $(pwd):/code philipssoftware/blackduck:6 /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.source.path=/code --detect.project.name=<your-project-name> --detect.project.version.name=<your-version>
 ```
-### Air Gap 
+
+###### Docker image scan
+``` bash
+# If you can share docker mount with blackduck imageinspector
+docker run -v /var/run/docker.sock:/var/run/docker.sock philipssoftware/blackduck:6-docker /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.project.name=<your-project-name> --detect.project.version.name=<your-version> --detect.docker.image=<your-image>
+
+# If you want to mount and provide blackduck imageinspector working directory
+mkdir $(pwd)/shared
+docker run -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):$(pwd) philipssoftware/blackduck:6-docker sh /airgap/packaged-inspectors/docker/blackduck-docker-inspector.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.project.name=<your-project-name> --detect.project.version.name=<your-version> --detect.docker.image=<your-image> --shared.dir.path.local=$(pwd)/shared
+```
+
+
+
+### Air Gap
 
 By setting setting the environment variable `DETECT_AIR_GAP` to `true` you can enable [Air Gap](https://synopsys.atlassian.net/wiki/spaces/INTDOCS/pages/88506397/Running+Synopsys+Detect+in+Air+Gap+Offline+and+Dry+Run+Modes). This eliminate the need for internet access that Detect requires to download those dependencies. Currently only the `gradle` inspector is supported. This mode is particularly useful when you are behind a corporate firewall which blocks connections to JFrog Artifactory.
 
@@ -55,7 +70,7 @@ The images obviously contain blackduck and java8, but also two other files:
 ### REPO
 
 This file has a url to the REPO with specific commit-sha of the build.
-Example: 
+Example:
 
 ```
 $ docker run philipssoftware/blackduck:6 cat REPO
@@ -64,7 +79,7 @@ https://github.com/philips-software/docker-blackduck/tree/facb2271e5a563e5d6f65c
 
 ### TAGS
 
-This contains all the similar tags at the point of creation. 
+This contains all the similar tags at the point of creation.
 
 ```
 $ docker run philipssoftware/blackduck:6 cat TAGS
@@ -96,6 +111,8 @@ You can use this to pin down a version of the container from an existing develop
 ### blackduck with dotnetcore-3.1.302
 - `blackduck:dotnetcore`, `blackduck:6-dotnetcore`, `blackduck:6-dotnetcore-3`, `blackduck:6-dotnetcore-3.1`, `blackduck:6.5-dotnetcore`, `blackduck:6.5-dotnetcore-3.1`, `blackduck:6.5.0-dotnetcore`, `blackduck:6.5.0-dotnetcore-3.1.302` [6/dotnetcore-3.1.302/Dockerfile](6/dotnetcore-3.1.302/Dockerfile)
 
+### blackduck with docker detector
+- `blackduck:docker`, `blackduck:6-docker`, `blackduck:6.5-docker`, `blackduck:6.5.0-docker` [6/docker/Dockerfile](6/docker/Dockerfile)
 
 ## Why
 
@@ -142,7 +159,7 @@ This module is part of the Philips Forest.
                                                     / __\__  _ __ ___  ___| |_
                                                    / _\/ _ \| '__/ _ \/ __| __|
                                                   / / | (_) | | |  __/\__ \ |_
-                                                  \/   \___/|_|  \___||___/\__|  
+                                                  \/   \___/|_|  \___||___/\__|
 
                                                                  Infrastructure
 ```
