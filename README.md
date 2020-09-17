@@ -26,7 +26,7 @@ Images can be found on [https://hub.docker.com/r/philipssoftware/blackduck/](htt
 
 ``` bash
 docker run philipssoftware/blackduck:6 /app/detect.sh --help
-docker run philipssoftware/blackduck:6 /app/detect.sh -hv
+docker run philipssoftware/blackduck:6 /app/detect.sh -hv 
 ```
 
 In order to analyse a project use the following structure.
@@ -70,7 +70,7 @@ The images obviously contain blackduck and java8, but also two other files:
 ### REPO
 
 This file has a url to the REPO with specific commit-sha of the build.
-Example:
+Example: 
 
 ```
 $ docker run philipssoftware/blackduck:6 cat REPO
@@ -79,7 +79,7 @@ https://github.com/philips-software/docker-blackduck/tree/facb2271e5a563e5d6f65c
 
 ### TAGS
 
-This contains all the similar tags at the point of creation.
+This contains all the similar tags at the point of creation. 
 
 ```
 $ docker run philipssoftware/blackduck:6 cat TAGS
@@ -159,7 +159,7 @@ This module is part of the Philips Forest.
                                                     / __\__  _ __ ___  ___| |_
                                                    / _\/ _ \| '__/ _ \/ __| __|
                                                   / / | (_) | | |  __/\__ \ |_
-                                                  \/   \___/|_|  \___||___/\__|
+                                                  \/   \___/|_|  \___||___/\__| 
 
                                                                  Infrastructure
 ```
