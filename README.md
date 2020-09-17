@@ -45,7 +45,7 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock --network="host" philips
 
 # If you want to mount and provide blackduck imageinspector working directory
 mkdir $(pwd)/shared
-docker run -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):$(pwd) --network="host" -w $(pwd) philipssoftware/blackduck:6-docker sh /airgap/packaged-inspectors/docker/blackduck-docker-inspector.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.project.name=<your-project-name> --detect.project.version.name=<your-version> --detect.docker.image=<your-image> --shared.dir.path.local=$(pwd)/shared
+docker run -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):$(pwd) --network="host" -w $(pwd) philipssoftware/blackduck:6-docker /airgap/packaged-inspectors/docker/blackduck-docker-inspector.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.project.name=<your-project-name> --detect.project.version.name=<your-version> --detect.docker.image=<your-image> --shared.dir.path.local=$(pwd)/shared
 ```
 
 
