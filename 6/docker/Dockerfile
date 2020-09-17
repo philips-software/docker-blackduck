@@ -8,9 +8,6 @@ ARG detect_latest_release_version
 ENV DETECT_LATEST_RELEASE_VERSION $detect_latest_release_version
 ENV DETECT_VERSION_KEY $detect_latest_release_version
 
-# Install utilities
-RUN apt-get update -y && apt-get install -y wget unzip netcat-openbsd
-
 # Install airgap
 RUN mkdir -p /airgap
 RUN cd /airgap \
