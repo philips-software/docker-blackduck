@@ -57,6 +57,8 @@ RUN mkdir -p /app \
 ADD /6/docker/scripts/entrypoint.sh /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh
+RUN chmod +x /airgap/packaged-inspectors/docker/blackduck-docker-inspector.sh
+
 ENTRYPOINT [ "/app/entrypoint.sh" ]
 
 ADD REPO .
