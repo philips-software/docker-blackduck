@@ -1,6 +1,6 @@
 ARG detect_latest_release_version=6.5.0
 
-FROM philipssoftware/node:14.13.0-stretch-java
+FROM philipssoftware/node:14.13.1-stretch-java
 
 MAINTAINER Forest Keepers
 
