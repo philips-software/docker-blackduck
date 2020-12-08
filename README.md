@@ -83,7 +83,7 @@ This contains all the similar tags at the point of creation.
 
 ```
 $ docker run philipssoftware/blackduck:6 cat TAGS
-blackduck blackduck:6 blackduck:6.5 blackduck:6.5.0
+blackduck blackduck:6 blackduck:6.7 blackduck:6.7.0
 ```
 
 You can use this to pin down a version of the container from an existing development build for production. When using `blackduck:6` for development. This ensures that you've got all security updates in your build. If you want to pin the version of your image down for production, you can use this file inside of the container to look for the most specific tag, the last one.
@@ -91,28 +91,28 @@ You can use this to pin down a version of the container from an existing develop
 ## Simple Tags
 
 ### blackduck
-- `blackduck`, `blackduck:6`, `blackduck:6.5`, `blackduck:6.5.0` [6/java/Dockerfile](6/java/Dockerfile)
+- `blackduck`, `blackduck:6`, `blackduck:6.7`, `blackduck:6.7.0` [6/java/Dockerfile](6/java/Dockerfile)
 
 ### blackduck with node
-- `blackduck:node`, `blackduck:6-node`, `blackduck:6.5-node`, `blackduck:6.5.0-node` [6/node/Dockerfile](6/node/Dockerfile)
+- `blackduck:node`, `blackduck:6-node`, `blackduck:6.7-node`, `blackduck:6.7.0-node` [6/node/Dockerfile](6/node/Dockerfile)
 
 ### blackduck with golang
-- `blackduck:golang`, `blackduck:6-golang`, `blackduck:6.5-golang`, `blackduck:6.5.0-golang` [6/golang/Dockerfile](6/golang/Dockerfile)
+- `blackduck:golang`, `blackduck:6-golang`, `blackduck:6.7-golang`, `blackduck:6.7.0-golang` [6/golang/Dockerfile](6/golang/Dockerfile)
 
 ### blackduck with dotnetcore-2.2.110
-- `blackduck:dotnetcore-2.2.110`, `blackduck:6-dotnetcore-2.2`, `blackduck:6.5-dotnetcore-2.2.110`, `blackduck:6.5.0-dotnetcore-2.2.110` [6/dotnetcore-2.2.110/Dockerfile](6/dotnetcore-2.2.110/Dockerfile)
+- `blackduck:dotnetcore-2.2.110`, `blackduck:6-dotnetcore-2.2`, `blackduck:6.7-dotnetcore-2.2.110`, `blackduck:6.7.0-dotnetcore-2.2.110` [6/dotnetcore-2.2.110/Dockerfile](6/dotnetcore-2.2.110/Dockerfile)
 
 ### blackduck with dotnetcore-3.0.101
-- `blackduck:6.5-dotnetcore-3.0`, `blackduck:6.5.0-dotnetcore-3.0.101` [6/dotnetcore-3.0.101/Dockerfile](6/dotnetcore-3.0.101/Dockerfile)
+- `blackduck:6.7-dotnetcore-3.0`, `blackduck:6.7.0-dotnetcore-3.0.101` [6/dotnetcore-3.0.101/Dockerfile](6/dotnetcore-3.0.101/Dockerfile)
 
 ### blackduck with dotnetcore-3.1.102
-- `blackduck:6.5.0-dotnetcore-3.1.102` [6/dotnetcore-3.1.102/Dockerfile](6/dotnetcore-3.1.102/Dockerfile)
+- `blackduck:6.7.0-dotnetcore-3.1.102` [6/dotnetcore-3.1.102/Dockerfile](6/dotnetcore-3.1.102/Dockerfile)
 
 ### blackduck with dotnetcore-3.1.302
-- `blackduck:dotnetcore`, `blackduck:6-dotnetcore`, `blackduck:6-dotnetcore-3`, `blackduck:6-dotnetcore-3.1`, `blackduck:6.5-dotnetcore`, `blackduck:6.5-dotnetcore-3.1`, `blackduck:6.5.0-dotnetcore`, `blackduck:6.5.0-dotnetcore-3.1.302` [6/dotnetcore-3.1.302/Dockerfile](6/dotnetcore-3.1.302/Dockerfile)
+- `blackduck:dotnetcore`, `blackduck:6-dotnetcore`, `blackduck:6-dotnetcore-3`, `blackduck:6-dotnetcore-3.1`, `blackduck:6.7-dotnetcore`, `blackduck:6.7-dotnetcore-3.1`, `blackduck:6.7.0-dotnetcore`, `blackduck:6.7.0-dotnetcore-3.1.302` [6/dotnetcore-3.1.302/Dockerfile](6/dotnetcore-3.1.302/Dockerfile)
 
 ### blackduck with docker detector
-- `blackduck:docker`, `blackduck:6-docker`, `blackduck:6.5-docker`, `blackduck:6.5.0-docker` [6/docker/Dockerfile](6/docker/Dockerfile)
+- `blackduck:docker`, `blackduck:6-docker`, `blackduck:6.7-docker`, `blackduck:6.7.0-docker` [6/docker/Dockerfile](6/docker/Dockerfile)
 
 ## Why
 
