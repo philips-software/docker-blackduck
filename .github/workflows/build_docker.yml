@@ -37,6 +37,23 @@ jobs:
         DOCKER_ORGANIZATION: philipssoftware
         GITHUB_ORGANIZATION: philips-software
 
+  build_blackduck_with_python:
+    name: Build blackduck with python 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build BlackDuck Docker Images with python
+      uses: philips-software/docker-ci-scripts@v3.1.0
+      with:
+        dockerfile: 6/python
+        image-name: blackduck
+        tags: python 6-python 6.7-python 6.7.0-python
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
+
   build_blackduck_with_golang:
     name: Build blackduck with golang
     runs-on: ubuntu-latest
