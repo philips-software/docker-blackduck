@@ -94,11 +94,13 @@ You can use this to pin down a version of the container from an existing develop
 ## Simple Tags
 
 ### blackduck
-
 - `blackduck`, `blackduck:6`, `blackduck:6.9`, `blackduck:6.9.0` [6/java/Dockerfile](6/java/Dockerfile)
 
 ### blackduck with node
 - `blackduck:node`, `blackduck:6-node`, `blackduck:6.9-node`, `blackduck:6.9.0-node` [6/node/Dockerfile](6/node/Dockerfile)
+
+### blackduck with python
+- `blackduck:python`, `blackduck:6-python`, `blackduck:6.9-python`, `blackduck:6.9.0-python` [6/python/Dockerfile](6/python/Dockerfile)
 
 ### blackduck with golang
 - `blackduck:golang`, `blackduck:6-golang`, `blackduck:6.9-golang`, `blackduck:6.9.0-golang` [6/golang/Dockerfile](6/golang/Dockerfile)
