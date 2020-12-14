@@ -1,6 +1,7 @@
 # This docker image is for supporting .net core sdk 2.2.110.
 # It is the most latest version supported in VS2017.
 # It is not available as docker image, so it is downloaded and extracted
+
 ARG detect_latest_release_version=6.9.0
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2

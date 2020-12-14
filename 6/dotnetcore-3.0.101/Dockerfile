@@ -1,4 +1,6 @@
+
 ARG detect_latest_release_version=6.9.0
+
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0.101
 

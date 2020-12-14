@@ -17,14 +17,14 @@ jobs:
       - name: Update README 
         run: |
           echo "{ \"repository\":\"${repository}\" }" > package.json
-          npx contributor-faces@v1.0.3 . --exclude '*github*'
+          npx contributor-faces@v1.0.3 . --exclude '*dependabot*'
           rm package.json
           git add README.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3.5.1
+        uses: peter-evans/create-pull-request@v3.5.2
         with:
           commit-message: update contributors
           title: Update contributors

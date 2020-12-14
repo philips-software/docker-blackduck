@@ -13,6 +13,7 @@ Current versions available:
 │   ├── golang
 │   ├── java
 │   ├── node
+│   ├── python
 │   ├── dotnetcore-2.2.110
 │   ├── dotnetcore-3.0.101
 │   ├── dotnetcore-3.1.102
@@ -83,7 +84,9 @@ This contains all the similar tags at the point of creation.
 
 ```
 $ docker run philipssoftware/blackduck:6 cat TAGS
+
 blackduck blackduck:6 blackduck:6.9 blackduck:6.9.0
+
 ```
 
 You can use this to pin down a version of the container from an existing development build for production. When using `blackduck:6` for development. This ensures that you've got all security updates in your build. If you want to pin the version of your image down for production, you can use this file inside of the container to look for the most specific tag, the last one.
@@ -91,6 +94,7 @@ You can use this to pin down a version of the container from an existing develop
 ## Simple Tags
 
 ### blackduck
+
 - `blackduck`, `blackduck:6`, `blackduck:6.9`, `blackduck:6.9.0` [6/java/Dockerfile](6/java/Dockerfile)
 
 ### blackduck with node
@@ -113,6 +117,7 @@ You can use this to pin down a version of the container from an existing develop
 
 ### blackduck with docker detector
 - `blackduck:docker`, `blackduck:6-docker`, `blackduck:6.9-docker`, `blackduck:6.9.0-docker` [6/docker/Dockerfile](6/docker/Dockerfile)
+
 
 ## Why
 
@@ -140,8 +145,8 @@ License is MIT. See [LICENSE file](LICENSE.md)
 [//]: contributor-faces
 <a href="https://github.com/JeroenKnoops"><img src="https://avatars1.githubusercontent.com/u/10019?v=4" title="JeroenKnoops" width="80" height="80"></a>
 <a href="https://github.com/bartgolsteijn"><img src="https://avatars0.githubusercontent.com/u/3263880?v=4" title="bartgolsteijn" width="80" height="80"></a>
-<a href="https://github.com/apps/dependabot"><img src="https://avatars0.githubusercontent.com/in/29110?v=4" title="dependabot[bot]" width="80" height="80"></a>
 <a href="https://github.com/loafoe"><img src="https://avatars2.githubusercontent.com/u/14123216?v=4" title="loafoe" width="80" height="80"></a>
+<a href="https://github.com/apps/github-actions"><img src="https://avatars2.githubusercontent.com/in/15368?v=4" title="github-actions[bot]" width="80" height="80"></a>
 <a href="https://github.com/marcofranssen"><img src="https://avatars1.githubusercontent.com/u/694733?v=4" title="marcofranssen" width="80" height="80"></a>
 <a href="https://github.com/prakashguru"><img src="https://avatars3.githubusercontent.com/u/11089125?v=4" title="prakashguru" width="80" height="80"></a>
 <a href="https://github.com/dmixonphilips"><img src="https://avatars0.githubusercontent.com/u/56551812?v=4" title="dmixonphilips" width="80" height="80"></a>
