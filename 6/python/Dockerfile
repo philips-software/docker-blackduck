@@ -17,6 +17,8 @@ RUN apt-get update && \
       netcat-openbsd && \
     rm -rf /var/lib/apt/lists/*
 
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+
 RUN mkdir -p /app
 RUN curl -o /app/detect.sh https://detect.synopsys.com/detect.sh
 
