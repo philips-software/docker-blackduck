@@ -145,7 +145,6 @@ License is MIT. See [LICENSE file](LICENSE.md)
 <a href="https://github.com/JeroenKnoops"><img src="https://avatars.githubusercontent.com/u/10019?v=4" title="JeroenKnoops" width="80" height="80"></a>
 <a href="https://github.com/bartgolsteijn"><img src="https://avatars.githubusercontent.com/u/3263880?v=4" title="bartgolsteijn" width="80" height="80"></a>
 <a href="https://github.com/loafoe"><img src="https://avatars.githubusercontent.com/u/14123216?v=4" title="loafoe" width="80" height="80"></a>
-<a href="https://github.com/apps/github-actions"><img src="https://avatars.githubusercontent.com/in/15368?v=4" title="github-actions[bot]" width="80" height="80"></a>
 <a href="https://github.com/kishoreinvits"><img src="https://avatars.githubusercontent.com/u/6522155?v=4" title="kishoreinvits" width="80" height="80"></a>
 <a href="https://github.com/marcofranssen"><img src="https://avatars.githubusercontent.com/u/694733?v=4" title="marcofranssen" width="80" height="80"></a>
 <a href="https://github.com/prakashguru"><img src="https://avatars.githubusercontent.com/u/11089125?v=4" title="prakashguru" width="80" height="80"></a>
