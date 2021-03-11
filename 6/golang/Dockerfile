@@ -1,6 +1,6 @@
 ARG detect_latest_release_version=6.7.0
 
-FROM golang:1.16.0-buster
+FROM golang:1.16.1-buster
 
 MAINTAINER Forest Keepers
 
