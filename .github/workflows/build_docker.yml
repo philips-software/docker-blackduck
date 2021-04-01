@@ -13,7 +13,7 @@ jobs:
       with:
         dockerfile: 6/java
         image-name: blackduck
-        tags: latest 6 6.7 6.7.0
+        tags: latest 6 6.9 6.9.1
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -30,7 +30,7 @@ jobs:
       with:
         dockerfile: 6/node
         image-name: blackduck
-        tags: node 6-node 6.7-node 6.7.0-node
+        tags: node 6-node 6.9-node 6.9.1-node
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -47,7 +47,7 @@ jobs:
       with:
         dockerfile: 6/python
         image-name: blackduck
-        tags: python 6-python 6.7-python 6.7.0-python
+        tags: python 6-python 6.9-python 6.9.1-python
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -64,7 +64,7 @@ jobs:
       with:
         dockerfile: 6/golang
         image-name: blackduck
-        tags: golang 6-golang 6.7-golang 6.7.0-golang
+        tags: golang 6-golang 6.9-golang 6.9.1-golang
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -81,7 +81,7 @@ jobs:
       with:
         dockerfile: 6/dotnetcore-2.2.110
         image-name: blackduck
-        tags: dotnetcore-2.2.110 6-dotnetcore-2.2 6.7-dotnetcore-2.2.110 6.7.0-dotnetcore-2.2.110
+        tags: dotnetcore-2.2.110 6-dotnetcore-2.2 6.9-dotnetcore-2.2.110 6.9.1-dotnetcore-2.2.110
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -98,7 +98,7 @@ jobs:
       with:
         dockerfile: 6/dotnetcore-3.0.101
         image-name: blackduck
-        tags: 6.7-dotnetcore-3.0 6.7.0-dotnetcore-3.0.101
+        tags: 6.9-dotnetcore-3.0 6.9.1-dotnetcore-3.0.101
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -115,7 +115,7 @@ jobs:
       with:
         dockerfile: 6/dotnetcore-3.1.102
         image-name: blackduck
-        tags: 6.7.0-dotnetcore-3.1.102
+        tags: 6.9.1-dotnetcore-3.1.102
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -132,7 +132,7 @@ jobs:
       with:
         dockerfile: 6/dotnetcore-3.1.302
         image-name: blackduck
-        tags: dotnetcore 6-dotnetcore 6-dotnetcore-3 6-dotnetcore-3.1 6.7-dotnetcore 6.7-dotnetcore-3.1 6.7.0-dotnetcore 6.7.0-dotnetcore-3.1.302
+        tags: dotnetcore 6-dotnetcore 6-dotnetcore-3 6-dotnetcore-3.1 6.9-dotnetcore 6.9-dotnetcore-3.1 6.9.1-dotnetcore 6.9.1-dotnetcore-3.1.302
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
@@ -149,7 +149,7 @@ jobs:
       with:
         dockerfile: 6/docker
         image-name: blackduck
-        tags: docker 6-docker 6.5-docker 6.5.0-docker
+        tags: docker 6-docker 6.9-docker 6.9.1-docker
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
