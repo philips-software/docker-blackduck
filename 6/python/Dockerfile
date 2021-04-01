@@ -1,6 +1,6 @@
-ARG detect_latest_release_version=6.7.0
+ARG detect_latest_release_version=6.9.1
 
-FROM philipssoftware/python:java-3.9
+FROM philipssoftware/python:java
 
 MAINTAINER Forest Keepers
 
