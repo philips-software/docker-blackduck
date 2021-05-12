@@ -7,7 +7,7 @@ jobs:
     name: Build blackduck with java 
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     - name: Build BlackDuck Docker Images with java
       uses: philips-software/docker-ci-scripts@v3.2.1
       with:
@@ -24,7 +24,7 @@ jobs:
     name: Build blackduck with node 
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     - name: Build BlackDuck Docker Images with node
       uses: philips-software/docker-ci-scripts@v3.2.1
       with:
@@ -41,7 +41,7 @@ jobs:
     name: Build blackduck with python 
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     - name: Build BlackDuck Docker Images with python
       uses: philips-software/docker-ci-scripts@v3.2.1
       with:
@@ -58,7 +58,7 @@ jobs:
     name: Build blackduck with golang
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     - name: Build BlackDuck Docker Images with golang
       uses: philips-software/docker-ci-scripts@v3.2.1
       with:
@@ -75,7 +75,7 @@ jobs:
     name: Build blackduck with dotnet core 2.2.110
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     - name: Build BlackDuck Docker Images with dotnet core 2.2.110
       uses: philips-software/docker-ci-scripts@v3.2.1
       with:
@@ -92,7 +92,7 @@ jobs:
     name: Build blackduck with dotnet core 3.0.101
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     - name: Build BlackDuck Docker Images with dotnet core
       uses: philips-software/docker-ci-scripts@v3.2.1
       with:
@@ -109,7 +109,7 @@ jobs:
     name: Build blackduck with dotnet core 3.1.102
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     - name: Build BlackDuck Docker Images with dotnet core
       uses: philips-software/docker-ci-scripts@v3.2.1
       with:
@@ -126,7 +126,7 @@ jobs:
     name: Build blackduck with dotnet core 3.1.302
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     - name: Build BlackDuck Docker Images with dotnet core
       uses: philips-software/docker-ci-scripts@v3.2.1
       with:
@@ -143,7 +143,7 @@ jobs:
     name: Build blackduck with docker detector
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     - name: Build BlackDuck Docker Images with docker detector
       uses: philips-software/docker-ci-scripts@v3.2.1
       with:
