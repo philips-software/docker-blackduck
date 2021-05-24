@@ -1,4 +1,4 @@
-ARG detect_latest_release_version=6.9.1
+ARG detect_latest_release_version=7.0.0
 
 FROM philipssoftware/python:java-3.9
 
@@ -19,12 +19,17 @@ RUN apt-get update && \
 
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
-RUN mkdir -p /app
-RUN curl -o /app/detect.sh https://detect.synopsys.com/detect.sh
+# Download detect 6 script
+RUN mkdir -p /app \
+    && curl -o /app/detect6.sh https://detect.synopsys.com/detect.sh \
+    && chmod +x /app/detect6.sh \
+    && /app/detect6.sh --help
 
-RUN chmod +x /app/detect.sh
-
-RUN /app/detect.sh --help
+# Download detect 7 script - We want default to 7
+RUN mkdir -p /app \
+    && curl -o /app/detect.sh https://detect.synopsys.com/detect7.sh \
+    && chmod +x /app/detect.sh \
+    && /app/detect.sh --help
 
 ADD REPO .
 ADD TAGS .

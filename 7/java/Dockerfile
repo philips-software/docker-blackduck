@@ -1,4 +1,4 @@
-ARG detect_latest_release_version=6.9.1
+ARG detect_latest_release_version=7.0.0
 
 FROM alpine:latest AS builder
 ARG detect_latest_release_version
@@ -45,14 +45,19 @@ RUN wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz https://www-us.apa
 RUN mkdir -p /airgap/packaged-inspectors/gradle/
 COPY --from=builder /airgap/packaged-inspectors/gradle/ /airgap/packaged-inspectors/gradle/
 
-RUN mkdir -p /app
-RUN curl -o /app/detect.sh https://detect.synopsys.com/detect.sh
+# Download detect 6 script
+RUN mkdir -p /app \
+    && curl -o /app/detect6.sh https://detect.synopsys.com/detect.sh \
+    && chmod +x /app/detect6.sh \
+    && /app/detect6.sh --help
 
-RUN chmod +x /app/detect.sh
+# Download detect 7 script - We want default to 7
+RUN mkdir -p /app \
+    && curl -o /app/detect.sh https://detect.synopsys.com/detect7.sh \
+    && chmod +x /app/detect.sh \
+    && /app/detect.sh --help
 
-RUN /app/detect.sh --help
-
-ADD /6/java/scripts/entrypoint.sh /app/entrypoint.sh
+ADD /7/java/scripts/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 ENTRYPOINT [ "/app/entrypoint.sh" ]
 

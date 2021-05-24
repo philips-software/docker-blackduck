@@ -1,4 +1,4 @@
-ARG detect_latest_release_version=6.9.1
+ARG detect_latest_release_version=7.0.0
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0.101
 
@@ -21,15 +21,19 @@ RUN apt-get -y install default-jre \
     && apt-get -q clean -y \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*.bin
 
-# Download detect script
-RUN mkdir -p /app
-RUN curl -o /app/detect.sh https://detect.synopsys.com/detect.sh
+# Download detect 6 script
+RUN mkdir -p /app \
+    && curl -o /app/detect6.sh https://detect.synopsys.com/detect.sh \
+    && chmod +x /app/detect6.sh \
+    && /app/detect6.sh --help
 
-RUN chmod +x /app/detect.sh
+# Download detect 7 script - We want default to 7
+RUN mkdir -p /app \
+    && curl -o /app/detect.sh https://detect.synopsys.com/detect7.sh \
+    && chmod +x /app/detect.sh \
+    && /app/detect.sh --help
 
-RUN /app/detect.sh --help
-
-ADD /6/dotnetcore-3.0.101/scripts/entrypoint.sh /app/entrypoint.sh
+ADD /7/dotnetcore-3.0.101/scripts/entrypoint.sh /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh
 
