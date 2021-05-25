@@ -151,6 +151,7 @@ License is MIT. See [LICENSE file](LICENSE.md)
 <a href="https://github.com/dmixonphilips"><img src="https://avatars.githubusercontent.com/u/56551812?v=4" title="dmixonphilips" width="80" height="80"></a>
 <a href="https://github.com/sudheeshps"><img src="https://avatars.githubusercontent.com/u/40300928?v=4" title="sudheeshps" width="80" height="80"></a>
 <a href="https://github.com/marcel-dias"><img src="https://avatars.githubusercontent.com/u/233598?v=4" title="marcel-dias" width="80" height="80"></a>
+<a href="https://github.com/timovandeput"><img src="https://avatars.githubusercontent.com/u/5458560?v=4" title="timovandeput" width="80" height="80"></a>
 
 [//]: contributor-faces
 
