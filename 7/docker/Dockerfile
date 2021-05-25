@@ -1,5 +1,5 @@
 # This docker image is for supporting docker detect.
-ARG detect_latest_release_version=6.9.1
+ARG detect_latest_release_version=7.0.0
 
 FROM alpine:latest AS builder
 MAINTAINER Forest Keepers
@@ -48,13 +48,19 @@ RUN apt-get update && apt-get -y install \
 RUN mkdir -p /airgap/packaged-inspectors/docker/
 COPY --from=builder /airgap/packaged-inspectors/docker/ /airgap/packaged-inspectors/docker/
 
-# Download detect script
+# Download detect 6 script
 RUN mkdir -p /app \
-    && curl -o /app/detect.sh https://detect.synopsys.com/detect.sh \
+    && curl -o /app/detect6.sh https://detect.synopsys.com/detect.sh \
+    && chmod +x /app/detect6.sh \
+    && /app/detect6.sh --help
+
+# Download detect 7 script - We want default to 7
+RUN mkdir -p /app \
+    && curl -o /app/detect.sh https://detect.synopsys.com/detect7.sh \
     && chmod +x /app/detect.sh \
     && /app/detect.sh --help
 
-ADD /6/docker/scripts/entrypoint.sh /app/entrypoint.sh
+ADD /7/docker/scripts/entrypoint.sh /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh
 RUN chmod +x /airgap/packaged-inspectors/docker/blackduck-docker-inspector.sh
