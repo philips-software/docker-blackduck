@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 The version numbers are related to the version of blackduck in the image appended with an internal version number.
 
 ### Changed
+- Bumped detect version to 7.2.0
+- Bumped detect version to 7.1.0
 - Bumped detect version to 7.0.0
 - Bumped detect version to 6.9.1
 - Bumped detect version to 6.7.0
