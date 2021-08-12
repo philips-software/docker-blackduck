@@ -148,10 +148,10 @@ License is MIT. See [LICENSE file](LICENSE.md)
 <a href="https://github.com/kishoreinvits"><img src="https://avatars.githubusercontent.com/u/6522155?v=4" title="kishoreinvits" width="80" height="80"></a>
 <a href="https://github.com/marcofranssen"><img src="https://avatars.githubusercontent.com/u/694733?v=4" title="marcofranssen" width="80" height="80"></a>
 <a href="https://github.com/prakashguru"><img src="https://avatars.githubusercontent.com/u/11089125?v=4" title="prakashguru" width="80" height="80"></a>
-<a href="https://github.com/timovandeput"><img src="https://avatars.githubusercontent.com/u/5458560?v=4" title="timovandeput" width="80" height="80"></a>
 <a href="https://github.com/dmixonphilips"><img src="https://avatars.githubusercontent.com/u/56551812?v=4" title="dmixonphilips" width="80" height="80"></a>
 <a href="https://github.com/sudheeshps"><img src="https://avatars.githubusercontent.com/u/40300928?v=4" title="sudheeshps" width="80" height="80"></a>
 <a href="https://github.com/marcel-dias"><img src="https://avatars.githubusercontent.com/u/233598?v=4" title="marcel-dias" width="80" height="80"></a>
+<a href="https://github.com/timovandeput"><img src="https://avatars.githubusercontent.com/u/5458560?v=4" title="timovandeput" width="80" height="80"></a>
 
 [//]: contributor-faces
 
