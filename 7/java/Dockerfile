@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 ARG detect_latest_release_version
-ARG MAVEN_VERSION=3.6.3
+ARG MAVEN_VERSION=3.8.2
 ENV PATH /opt/apache-maven/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV M2_HOME /opt/apache-maven
 ENV MAVEN_HOME /opt/apache-maven
@@ -33,7 +33,7 @@ ENV SRC_PATH /code
 
 USER root
 
-RUN wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz https://www-us.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
+RUN wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz https://dlcdn.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
     && wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512 https://www.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512 \
     && sha512sum /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz | grep `cat /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512` \
     && tar -xzvf /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz -C /opt/ \
