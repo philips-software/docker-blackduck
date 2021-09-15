@@ -92,31 +92,31 @@ You can use this to pin down a version of the container from an existing develop
 ## Simple Tags
 
 ### blackduck
-- `blackduck`, `blackduck:7`, `blackduck:7.4`, `blackduck:7.4.0` [7/java/Dockerfile](7/java/Dockerfile)
+- `blackduck`, `blackduck:7`, `blackduck:7.5`, `blackduck:7.5.0` [7/java/Dockerfile](7/java/Dockerfile)
 
 ### blackduck with node
-- `blackduck:node`, `blackduck:7-node`, `blackduck:7.4-node`, `blackduck:7.4.0-node` [7/node/Dockerfile](7/node/Dockerfile)
+- `blackduck:node`, `blackduck:7-node`, `blackduck:7.5-node`, `blackduck:7.5.0-node` [7/node/Dockerfile](7/node/Dockerfile)
 
 ### blackduck with python
-- `blackduck:python`, `blackduck:7-python`, `blackduck:7.4-python`, `blackduck:7.4.0-python` [7/python/Dockerfile](7/python/Dockerfile)
+- `blackduck:python`, `blackduck:7-python`, `blackduck:7.5-python`, `blackduck:7.5.0-python` [7/python/Dockerfile](7/python/Dockerfile)
 
 ### blackduck with golang
-- `blackduck:golang`, `blackduck:7-golang`, `blackduck:7.4-golang`, `blackduck:7.4.0-golang` [7/golang/Dockerfile](7/golang/Dockerfile)
+- `blackduck:golang`, `blackduck:7-golang`, `blackduck:7.5-golang`, `blackduck:7.5.0-golang` [7/golang/Dockerfile](7/golang/Dockerfile)
 
 ### blackduck with dotnetcore-2.2.110
-- `blackduck:dotnetcore-2.2.110`, `blackduck:7-dotnetcore-2.2`, `blackduck:7.4-dotnetcore-2.2.110`, `blackduck:7.4.0-dotnetcore-2.2.110` [7/dotnetcore-2.2.110/Dockerfile](7/dotnetcore-2.2.110/Dockerfile)
+- `blackduck:dotnetcore-2.2.110`, `blackduck:7-dotnetcore-2.2`, `blackduck:7.5-dotnetcore-2.2.110`, `blackduck:7.5.0-dotnetcore-2.2.110` [7/dotnetcore-2.2.110/Dockerfile](7/dotnetcore-2.2.110/Dockerfile)
 
 ### blackduck with dotnetcore-3.0.101
-- `blackduck:7.4-dotnetcore-3.0`, `blackduck:7.4.0-dotnetcore-3.0.101` [7/dotnetcore-3.0.101/Dockerfile](7/dotnetcore-3.0.101/Dockerfile)
+- `blackduck:7.5-dotnetcore-3.0`, `blackduck:7.5.0-dotnetcore-3.0.101` [7/dotnetcore-3.0.101/Dockerfile](7/dotnetcore-3.0.101/Dockerfile)
 
 ### blackduck with dotnetcore-3.1.102
-- `blackduck:7.4.0-dotnetcore-3.1.102` [7/dotnetcore-3.1.102/Dockerfile](7/dotnetcore-3.1.102/Dockerfile)
+- `blackduck:7.5.0-dotnetcore-3.1.102` [7/dotnetcore-3.1.102/Dockerfile](7/dotnetcore-3.1.102/Dockerfile)
 
 ### blackduck with dotnetcore-3.1.302
-- `blackduck:dotnetcore`, `blackduck:7-dotnetcore`, `blackduck:7-dotnetcore-3`, `blackduck:7-dotnetcore-3.1`, `blackduck:7.4-dotnetcore`, `blackduck:7.-dotnetcore-3.1`, `blackduck:7.4.0-dotnetcore`, `blackduck:7.4.0-dotnetcore-3.1.302` [7/dotnetcore-3.1.302/Dockerfile](7/dotnetcore-3.1.302/Dockerfile)
+- `blackduck:dotnetcore`, `blackduck:7-dotnetcore`, `blackduck:7-dotnetcore-3`, `blackduck:7-dotnetcore-3.1`, `blackduck:7.5-dotnetcore`, `blackduck:7.-dotnetcore-3.1`, `blackduck:7.5.0-dotnetcore`, `blackduck:7.5.0-dotnetcore-3.1.302` [7/dotnetcore-3.1.302/Dockerfile](7/dotnetcore-3.1.302/Dockerfile)
 
 ### blackduck with docker detector
-- `blackduck:docker`, `blackduck:7-docker`, `blackduck:7.4-docker`, `blackduck:7.4.0-docker` [7/docker/Dockerfile](7/docker/Dockerfile)
+- `blackduck:docker`, `blackduck:7-docker`, `blackduck:7.5-docker`, `blackduck:7.5.0-docker` [7/docker/Dockerfile](7/docker/Dockerfile)
 
 ## Why
 
