@@ -1,4 +1,4 @@
-ARG detect_latest_release_version=7.5.0
+ARG detect_latest_release_version=7.6.0
 
 FROM golang:1.16.4-buster
 
