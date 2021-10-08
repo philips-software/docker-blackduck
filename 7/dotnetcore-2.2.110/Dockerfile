@@ -37,13 +37,13 @@ ENV DETECT_DOTNET_PATH /usr/share/dotnet/dotnet
 
 # Download detect 6 script
 RUN mkdir -p /app \
-    && curl -o /app/detect6.sh https://detect.synopsys.com/detect.sh \
+    && curl -o /app/detect6.sh https://detect.synopsys.com/detect.sh --insecure \
     && chmod +x /app/detect6.sh \
     && /app/detect6.sh --help
 
 # Download detect 7 script - We want default to 7
 RUN mkdir -p /app \
-    && curl -o /app/detect.sh https://detect.synopsys.com/detect7.sh \
+    && curl -o /app/detect.sh https://detect.synopsys.com/detect7.sh --insecure \
     && chmod +x /app/detect.sh \
     && /app/detect.sh --help
 
