@@ -11,7 +11,7 @@ jobs:
     container: node:12-alpine3.11
     steps:
       - run: apk add bash git python3 py3-pip
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v2.4.0
         with:
           fetch-depth: 0
       - name: Update README 
