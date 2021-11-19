@@ -1,7 +1,7 @@
 # This docker image is for supporting .net core sdk 2.2.110.
 # It is the most latest version supported in VS2017.
 # It is not available as docker image, so it is downloaded and extracted
-ARG detect_latest_release_version=7.7.0
+ARG detect_latest_release_version=7.8.0
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2
 MAINTAINER Forest Keepers
@@ -11,7 +11,7 @@ ENV DETECT_LATEST_RELEASE_VERSION $detect_latest_release_version
 ENV DETECT_VERSION_KEY $detect_latest_release_version
 
 # Install utilities
-RUN apt-get update -y && apt-get install -y wget unzip netcat-openbsd
+RUN apt-get update -y && apt-get upgrade -y && apt-get install -y wget unzip netcat-openbsd
 
 # Install airgap
 RUN wget https://sig-repo.synopsys.com/bds-integrations-release/com/synopsys/integration/synopsys-detect/$DETECT_VERSION_KEY/synopsys-detect-$DETECT_VERSION_KEY-air-gap-gradle-nuget.zip \
