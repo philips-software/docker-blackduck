@@ -33,8 +33,8 @@ ENV SRC_PATH /code
 
 USER root
 
-RUN wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz https://dlcdn.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
-    && wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512 https://www.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512 \
+RUN wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
+    && wget -nc -O /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512 https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512 \
     && sha512sum /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz | grep `cat /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz.sha512` \
     && tar -xzvf /tmp/apache-maven-${MAVEN_VERSION}-bin.tar.gz -C /opt/ \
     && chown -R root:root /opt/apache-maven-${MAVEN_VERSION} \
