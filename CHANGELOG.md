@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 The version numbers are related to the version of blackduck in the image appended with an internal version number.
 
 ### Changed
+- Removed --blackduck.hub.trust.cert=true
 - Bumped detect version to 7.4.0
 - Bumped mvn version in java image to 3.8.2 
 - Bumped detect version to 7.3.0

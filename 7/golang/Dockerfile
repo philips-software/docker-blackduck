@@ -33,4 +33,4 @@ RUN /app/detect.sh --help
 ADD REPO .
 ADD TAGS .
 
-CMD /app/detect.sh --blackduck.hub.url="${HUB_URL}" --blackduck.hub.api.token="${HUB_TOKEN}" --blackduck.hub.trust.cert=true --detect.policy.check=true --detect.source.path="${SRC_PATH}"
+CMD /app/detect.sh --blackduck.hub.url="${HUB_URL}" --blackduck.hub.api.token="${HUB_TOKEN}" --detect.policy.check=true --detect.source.path="${SRC_PATH}"
