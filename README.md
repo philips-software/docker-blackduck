@@ -26,8 +26,8 @@ Current versions available:
 Images can be found on [https://hub.docker.com/r/philipssoftware/blackduck/](https://hub.docker.com/r/philipssoftware/blackduck/).
 
 ``` bash
-docker run philipssoftware/blackduck:6 /app/detect.sh --help
-docker run philipssoftware/blackduck:6 /app/detect.sh -hv 
+docker run philipssoftware/blackduck:7 /app/detect.sh --help
+docker run philipssoftware/blackduck:7 /app/detect.sh -hv 
 ```
 
 In order to analyse a project use the following structure.
@@ -36,17 +36,29 @@ _Replace all <your-xxxxx> variables with your own variables_
 
 ###### Source code scan
 ``` bash
-docker run -v $(pwd):/code philipssoftware/blackduck:6 /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.source.path=/code --detect.project.name=<your-project-name> --detect.project.version.name=<your-version>
+docker run -v $(pwd):/code philipssoftware/blackduck:7 /app/detect.sh \
+  --blackduck.url=<your-blackduck-url> \
+  --blackduck.api.token=<your-token> \
+  --blackduck.trust.cert=true \
+  --detect.policy.check=true \
+  --detect.source.path=/code \
+  --detect.project.name=<your-project-name> \
+  --detect.project.version.name=<your-version>
 ```
 
 ###### Docker image scan
 ``` bash
 # If you can share docker mount with blackduck imageinspector
-docker run -v /var/run/docker.sock:/var/run/docker.sock --network="host" philipssoftware/blackduck:6-docker /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.project.name=<your-project-name> --detect.project.version.name=<your-version> --detect.docker.image=<your-image>
+docker run -v /var/run/docker.sock:/var/run/docker.sock --network="host" philipssoftware/blackduck:7-docker \
+  /app/detect.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --detect.policy.check=true \
+  --detect.project.name=<your-project-name> --detect.project.version.name=<your-version> --detect.docker.image=<your-image>
 
 # If you want to mount and provide blackduck imageinspector working directory
 mkdir $(pwd)/shared
-docker run -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):$(pwd) --network="host" -w $(pwd) philipssoftware/blackduck:6-docker /airgap/packaged-inspectors/docker/blackduck-docker-inspector.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> --blackduck.trust.cert=true --detect.policy.check=true --detect.project.name=<your-project-name> --detect.project.version.name=<your-version> --detect.docker.image=<your-image> --shared.dir.path.local=$(pwd)/shared
+docker run -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):$(pwd) --network="host" -w $(pwd) philipssoftware/blackduck:7-docker \
+  /airgap/packaged-inspectors/docker/blackduck-docker-inspector.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> \
+  --detect.policy.check=true --detect.project.name=<your-project-name> --detect.project.version.name=<your-version> \ 
+  --detect.docker.image=<your-image> --shared.dir.path.local=$(pwd)/shared
 ```
 
 
