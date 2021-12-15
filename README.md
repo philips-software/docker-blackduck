@@ -39,7 +39,6 @@ _Replace all <your-xxxxx> variables with your own variables_
 docker run -v $(pwd):/code philipssoftware/blackduck:7 /app/detect.sh \
   --blackduck.url=<your-blackduck-url> \
   --blackduck.api.token=<your-token> \
-  --blackduck.trust.cert=true \
   --detect.policy.check=true \
   --detect.source.path=/code \
   --detect.project.name=<your-project-name> \
