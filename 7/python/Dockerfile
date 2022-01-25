@@ -1,4 +1,4 @@
-ARG detect_latest_release_version=7.9.0
+ARG detect_latest_release_version=7.10.0
 
 FROM philipssoftware/python:java-3.9
 
