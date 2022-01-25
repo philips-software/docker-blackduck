@@ -2,156 +2,54 @@ on: [push]
 
 name: build
 
+env:
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+  DOCKER_ORGANIZATION: philipssoftware
+  GITHUB_ORGANIZATION: philips-software
+  COSIGN_PRIVATE_KEY: '${{ secrets.COSIGN_PRIVATE_KEY }}'
+  COSIGN_PASSWORD: '${{ secrets.COSIGN_PASSWORD }}'
+  COSIGN_PUBLIC_KEY: '${{ secrets.COSIGN_PUBLIC_KEY  }}'
+
 jobs:
-  build_blackduck_with_java:
-    name: Build blackduck with java 
+  build_blackduck:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - name: Build BlackDuck Docker Images with java
+            dockerfile: 7/java
+            tags: latest 7 7.10 7.10.0
+          - name: Build BlackDuck Docker Images with node
+            dockerfile: 7/node
+            tags: node 7-node 7.10-node 7.10.0-node
+          - name: Build BlackDuck Docker Images with python
+            dockerfile: 7/python
+            tags: python 7-python 7.10-python 7.10.0-python
+          - name: Build BlackDuck Docker Images with golang
+            dockerfile: 7/golang
+            tags: golang 7-golang 7.10-golang 7.10.0-golang
+          - name: Build BlackDuck Docker Images with dotnet core 2.2.110
+            dockerfile: 7/dotnetcore-2.2.110
+            tags: dotnetcore-2.2.110 7-dotnetcore-2.2 7.10-dotnetcore-2.2.110 7.10.0-dotnetcore-2.2.110
+          - name: Build BlackDuck Docker Images with dotnet core
+            dockerfile: 7/dotnetcore-3.0.101
+            tags: 7.10-dotnetcore-3.0 7.10.0-dotnetcore-3.0.101
+          - name: Build BlackDuck Docker Images with dotnet core
+            dockerfile: 7/dotnetcore-3.1.102
+            tags: 7.10.0-dotnetcore-3.1.102
+          - name: Build BlackDuck Docker Images with dotnet core
+            dockerfile: 7/dotnetcore-3.1.302
+            tags: dotnetcore 7-dotnetcore 7-dotnetcore-3 7-dotnetcore-3.1 7.10-dotnetcore 7.10-dotnetcore-3.1 7.10.0-dotnetcore 7.10.0-dotnetcore-3.1.302
+          - name: Build BlackDuck Docker Images with docker detector
+            dockerfile: 7/docker
+            tags: docker 7-docker 7.10-docker 7.10.0-docker
     steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Build BlackDuck Docker Images with java
-      uses: philips-software/docker-ci-scripts@v3.3.2
-      with:
-        dockerfile: 7/java
-        image-name: blackduck
-        tags: latest 7 7.10 7.10.0
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: philipssoftware
-        GITHUB_ORGANIZATION: philips-software
-
-  build_blackduck_with_node:
-    name: Build blackduck with node 
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Build BlackDuck Docker Images with node
-      uses: philips-software/docker-ci-scripts@v3.3.2
-      with:
-        dockerfile: 7/node
-        image-name: blackduck
-        tags: node 7-node 7.10-node 7.10.0-node
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: philipssoftware
-        GITHUB_ORGANIZATION: philips-software
-
-  build_blackduck_with_python:
-    name: Build blackduck with python 
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Build BlackDuck Docker Images with python
-      uses: philips-software/docker-ci-scripts@v3.3.2
-      with:
-        dockerfile: 7/python
-        image-name: blackduck
-        tags: python 7-python 7.10-python 7.10.0-python
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: philipssoftware
-        GITHUB_ORGANIZATION: philips-software
-
-  build_blackduck_with_golang:
-    name: Build blackduck with golang
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Build BlackDuck Docker Images with golang
-      uses: philips-software/docker-ci-scripts@v3.3.2
-      with:
-        dockerfile: 7/golang
-        image-name: blackduck
-        tags: golang 7-golang 7.10-golang 7.10.0-golang
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: philipssoftware
-        GITHUB_ORGANIZATION: philips-software
-
-  build_blackduck_with_dotnetcore_2_2_110:
-    name: Build blackduck with dotnet core 2.2.110
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Build BlackDuck Docker Images with dotnet core 2.2.110
-      uses: philips-software/docker-ci-scripts@v3.3.2
-      with:
-        dockerfile: 7/dotnetcore-2.2.110
-        image-name: blackduck
-        tags: dotnetcore-2.2.110 7-dotnetcore-2.2 7.10-dotnetcore-2.2.110 7.10.0-dotnetcore-2.2.110
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: philipssoftware
-        GITHUB_ORGANIZATION: philips-software
-
-  build_blackduck_with_dotnetcore_3_0_101:
-    name: Build blackduck with dotnet core 3.0.101
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Build BlackDuck Docker Images with dotnet core
-      uses: philips-software/docker-ci-scripts@v3.3.2
-      with:
-        dockerfile: 7/dotnetcore-3.0.101
-        image-name: blackduck
-        tags: 7.10-dotnetcore-3.0 7.10.0-dotnetcore-3.0.101
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: philipssoftware
-        GITHUB_ORGANIZATION: philips-software
-
-  build_blackduck_with_dotnetcore_3_1_102:
-    name: Build blackduck with dotnet core 3.1.102
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Build BlackDuck Docker Images with dotnet core
-      uses: philips-software/docker-ci-scripts@v3.3.2
-      with:
-        dockerfile: 7/dotnetcore-3.1.102
-        image-name: blackduck
-        tags: 7.10.0-dotnetcore-3.1.102
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: philipssoftware
-        GITHUB_ORGANIZATION: philips-software
-
-  build_blackduck_with_dotnetcore_3_1_302:
-    name: Build blackduck with dotnet core 3.1.302
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Build BlackDuck Docker Images with dotnet core
-      uses: philips-software/docker-ci-scripts@v3.3.2
-      with:
-        dockerfile: 7/dotnetcore-3.1.302
-        image-name: blackduck
-        tags: dotnetcore 7-dotnetcore 7-dotnetcore-3 7-dotnetcore-3.1 7.10-dotnetcore 7.10-dotnetcore-3.1 7.10.0-dotnetcore 7.10.0-dotnetcore-3.1.302
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: philipssoftware
-        GITHUB_ORGANIZATION: philips-software
-
-  build_blackduck_with_docker_detector:
-    name: Build blackduck with docker detector
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Build BlackDuck Docker Images with docker detector
-      uses: philips-software/docker-ci-scripts@v3.3.2
-      with:
-        dockerfile: 7/docker
-        image-name: blackduck
-        tags: docker 7-docker 7.10-docker 7.10.0-docker
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: philipssoftware
-        GITHUB_ORGANIZATION: philips-software
+      - uses: actions/checkout@v2.4.0
+      - name: ${{ matrix.name }} 
+        uses: philips-software/docker-ci-scripts@attach-provenance-to-image
+        with:
+          dockerfile: ${{ matrix.dockerfile }} 
+          image-name: blackduck
+          tags: ${{ matrix.tags }} 
+          slsa-provenance: true
