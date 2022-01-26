@@ -51,6 +51,7 @@ jobs:
         with:
           dockerfile: ${{ matrix.dockerfile }} 
           image-name: blackduck
-          tags: ${{ matrix.tags }} 
+          tags: ${{ matrix.tags }}
+          push-branches: main provenance
           slsa-provenance: true
           sign: true
