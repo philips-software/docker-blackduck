@@ -47,9 +47,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
       - name: ${{ matrix.name }} 
-        uses: philips-software/docker-ci-scripts@attach-provenance-to-image
+        uses: philips-software/docker-ci-scripts@main
         with:
           dockerfile: ${{ matrix.dockerfile }} 
           image-name: blackduck
           tags: ${{ matrix.tags }} 
           slsa-provenance: true
+          sign: true
