@@ -47,11 +47,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
       - name: ${{ matrix.name }} 
-        uses: philips-software/docker-ci-scripts@main
+        uses: philips-software/docker-ci-scripts@v4.0.0
         with:
           dockerfile: ${{ matrix.dockerfile }} 
           image-name: blackduck
           tags: ${{ matrix.tags }}
-          push-branches: main provenance
+          push-branches: main
           slsa-provenance: true
           sign: true
