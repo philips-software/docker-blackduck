@@ -54,5 +54,4 @@ jobs:
           tags: ${{ matrix.tags }}
           push-branches: main
           slsa-provenance: true
-          sbom: true
           sign: true
