@@ -19,31 +19,31 @@ jobs:
         include:
           - name: Build BlackDuck Docker Images with java
             dockerfile: 7/java
-            tags: latest 7 7.10 7.10.0
+            tags: latest 7 7.11 7.11.0
           - name: Build BlackDuck Docker Images with node
             dockerfile: 7/node
-            tags: node 7-node 7.10-node 7.10.0-node
+            tags: node 7-node 7.11-node 7.11.0-node
           - name: Build BlackDuck Docker Images with python
             dockerfile: 7/python
-            tags: python 7-python 7.10-python 7.10.0-python
+            tags: python 7-python 7.11-python 7.11.0-python
           - name: Build BlackDuck Docker Images with golang
             dockerfile: 7/golang
-            tags: golang 7-golang 7.10-golang 7.10.0-golang
+            tags: golang 7-golang 7.11-golang 7.11.0-golang
           - name: Build BlackDuck Docker Images with dotnet core 2.2.110
             dockerfile: 7/dotnetcore-2.2.110
-            tags: dotnetcore-2.2.110 7-dotnetcore-2.2 7.10-dotnetcore-2.2.110 7.10.0-dotnetcore-2.2.110
+            tags: dotnetcore-2.2.110 7-dotnetcore-2.2 7.11-dotnetcore-2.2.110 7.11.0-dotnetcore-2.2.110
           - name: Build BlackDuck Docker Images with dotnet core
             dockerfile: 7/dotnetcore-3.0.101
-            tags: 7.10-dotnetcore-3.0 7.10.0-dotnetcore-3.0.101
+            tags: 7.11-dotnetcore-3.0 7.11.0-dotnetcore-3.0.101
           - name: Build BlackDuck Docker Images with dotnet core
             dockerfile: 7/dotnetcore-3.1.102
-            tags: 7.10.0-dotnetcore-3.1.102
+            tags: 7.11.0-dotnetcore-3.1.102
           - name: Build BlackDuck Docker Images with dotnet core
             dockerfile: 7/dotnetcore-3.1.302
-            tags: dotnetcore 7-dotnetcore 7-dotnetcore-3 7-dotnetcore-3.1 7.10-dotnetcore 7.10-dotnetcore-3.1 7.10.0-dotnetcore 7.10.0-dotnetcore-3.1.302
+            tags: dotnetcore 7-dotnetcore 7-dotnetcore-3 7-dotnetcore-3.1 7.11-dotnetcore 7.11-dotnetcore-3.1 7.11.0-dotnetcore 7.11.0-dotnetcore-3.1.302
           - name: Build BlackDuck Docker Images with docker detector
             dockerfile: 7/docker
-            tags: docker 7-docker 7.10-docker 7.10.0-docker
+            tags: docker 7-docker 7.11-docker 7.11.0-docker
     steps:
       - uses: actions/checkout@v2.4.0
       - name: ${{ matrix.name }} 
