@@ -47,7 +47,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
       - name: ${{ matrix.name }} 
-        uses: philips-software/docker-ci-scripts@v4.1.0
+        uses: philips-software/docker-ci-scripts@v4.1.1
         with:
           dockerfile: ${{ matrix.dockerfile }} 
           image-name: blackduck
@@ -55,3 +55,4 @@ jobs:
           push-branches: main
           slsa-provenance: true
           sign: true
+          sbom: true
