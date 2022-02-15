@@ -47,11 +47,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
       - name: ${{ matrix.name }} 
-        uses: philips-software/docker-ci-scripts@v4.1.0
+        uses: philips-software/docker-ci-scripts@update-cosign-slsa
         with:
           dockerfile: ${{ matrix.dockerfile }} 
           image-name: blackduck
           tags: ${{ matrix.tags }}
-          push-branches: main
+          push-branches: main test-new-versions
           slsa-provenance: true
           sign: true
