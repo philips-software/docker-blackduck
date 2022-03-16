@@ -6,6 +6,7 @@ The version numbers are related to the version of blackduck in the image appende
 
 ### Changed
 
+- Bumped detect version to 7.12.0
 - Bumped detect version to 7.11.1
 - Bumped detect version to 7.11.0
 - Bumped detect version to 7.10.0
