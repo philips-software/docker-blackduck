@@ -52,7 +52,7 @@ jobs:
           dockerfile: ${{ matrix.dockerfile }}
           image-name: blackduck
           tags: ${{ matrix.tags }}
-          push-branches: main update-7.13.2
+          push-branches: main
           slsa-provenance: true
           sign: true
           sbom: true
