@@ -1,5 +1,5 @@
 # This docker image is for supporting docker detect.
-ARG detect_latest_release_version=7.13.2
+ARG detect_latest_release_version=7.14.0
 
 FROM alpine:latest AS builder
 MAINTAINER Forest Keepers
