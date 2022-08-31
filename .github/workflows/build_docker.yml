@@ -3,8 +3,8 @@ on: [push]
 name: build
 
 env:
-  DOCKER_USERNAME: philipssoftware
-  DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+  REGISTRY_USERNAME: philipssoftware
+  REGISTRY_TOKEN: '${{ secrets.DOCKER_PASSWORD }}'
   DOCKER_ORGANIZATION: philipssoftware
   GITHUB_ORGANIZATION: philips-software
   COSIGN_PRIVATE_KEY: '${{ secrets.COSIGN_PRIVATE_KEY }}'
