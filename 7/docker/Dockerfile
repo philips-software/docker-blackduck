@@ -29,6 +29,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         ca-certificates \
         curl \
         gnupg-agent \
+        gnupg \
         software-properties-common \
         unzip
 
