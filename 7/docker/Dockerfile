@@ -24,7 +24,7 @@ ENV SYNOPSYS_SKIP_PHONE_HOME true
 USER root
 
 # Install utilities
-RUN apt-get update && apt-get -y install \
+RUN apt-get update && apt-get -y install --no-install-recommends \
         apt-transport-https \
         ca-certificates \
         curl \
@@ -39,7 +39,7 @@ RUN add-apt-repository \
         "deb [arch=amd64] https://download.docker.com/linux/debian \
         $(lsb_release -cs) \
         stable"
-RUN apt-get update && apt-get -y install \
+RUN apt-get update && apt-get -y install --no-install-recommends \
         docker-ce \
         docker-ce-cli \
         containerd.io
