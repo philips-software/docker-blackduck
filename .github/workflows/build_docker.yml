@@ -61,28 +61,28 @@ jobs:
         include:
           - name: Build BlackDuck Docker Images with java
             dockerfile: 8/java
-            tags: 8 8.1 8.1.1
+            tags: 8 8.2 8.2.0
           - name: Build BlackDuck Docker Images with node
             dockerfile: 8/node
-            tags: 8-node 8.1-node 8.1.1-node
+            tags: 8-node 8.2-node 8.2.0-node
           - name: Build BlackDuck Docker Images with python
             dockerfile: 8/python
-            tags: 8-python 8.1-python 8.1.1-python
+            tags: 8-python 8.2-python 8.2.0-python
           - name: Build BlackDuck Docker Images with golang
             dockerfile: 8/golang
-            tags: 8-golang 8.1-golang 8.1.1-golang
+            tags: 8-golang 8.2-golang 8.2.0-golang
           - name: Build BlackDuck Docker Images with dotnet core 2.2.110
             dockerfile: 8/dotnetcore-2.2.110
-            tags: 8-dotnetcore-2.2 8.1-dotnetcore-2.2.110 8.1.1-dotnetcore-2.2.110
+            tags: 8-dotnetcore-2.2 8.2-dotnetcore-2.2.110 8.2.0-dotnetcore-2.2.110
           - name: Build BlackDuck Docker Images with dotnet core
             dockerfile: 8/dotnetcore-3.0.101
-            tags: 8.1-dotnetcore-3.0 8.1.1-dotnetcore-3.0.101
+            tags: 8.2-dotnetcore-3.0 8.2.0-dotnetcore-3.0.101
           - name: Build BlackDuck Docker Images with dotnet core
             dockerfile: 8/dotnetcore-3.1.102
-            tags: 8.1-dotnetcore-3.1.102 8.1.1-dotnetcore-3.1.102
+            tags: 8.2-dotnetcore-3.1.102 8.2.0-dotnetcore-3.1.102
           - name: Build BlackDuck Docker Images with dotnet core
             dockerfile: 8/dotnetcore-3.1.302
-            tags: 8-dotnetcore 8-dotnetcore-3 8-dotnetcore-3.1 8.1-dotnetcore 8.1-dotnetcore-3.1 8.1.1-dotnetcore 8.1.1-dotnetcore-3.1.302
+            tags: 8-dotnetcore 8-dotnetcore-3 8-dotnetcore-3.1 8.2-dotnetcore 8.2-dotnetcore-3.1 8.2.0-dotnetcore 8.2.0-dotnetcore-3.1.302
     steps:
       - uses: actions/checkout@v3
       - name: ${{ matrix.name }}
