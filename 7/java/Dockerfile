@@ -61,7 +61,4 @@ ADD /7/java/scripts/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 ENTRYPOINT [ "/app/entrypoint.sh" ]
 
-ADD REPO .
-ADD TAGS .
-
 CMD /app/detect.sh --blackduck.hub.url="${HUB_URL}" --blackduck.hub.api.token="${HUB_TOKEN}" --detect.policy.check=true --detect.source.path="${SRC_PATH}"
