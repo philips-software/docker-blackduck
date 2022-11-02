@@ -18,7 +18,6 @@ Current versions available:
 │   ├── dotnetcore-3.0.101
 │   ├── dotnetcore-3.1.102
 │   └── dotnetcore-3.1.302
-│   └── docker
 ├── 8
 │   ├── golang
 │   ├── java
@@ -28,7 +27,6 @@ Current versions available:
 │   ├── dotnetcore-3.0.101
 │   ├── dotnetcore-3.1.102
 │   └── dotnetcore-3.1.302
-│   └── docker
 ```
 
 ## Usage

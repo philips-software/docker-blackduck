@@ -41,9 +41,6 @@ jobs:
           - name: Build BlackDuck Docker Images with dotnet core
             dockerfile: 7/dotnetcore-3.1.302
             tags: dotnetcore 7-dotnetcore 7-dotnetcore-3 7-dotnetcore-3.1 7.14-dotnetcore 7.14-dotnetcore-3.1 7.14.0-dotnetcore 7.14.0-dotnetcore-3.1.302
-          - name: Build BlackDuck Docker Images with docker detector
-            dockerfile: 7/docker
-            tags: docker 7-docker 7.14-docker 7.14.0-docker
     steps:
       - uses: actions/checkout@v3
       - name: ${{ matrix.name }}
@@ -85,9 +82,6 @@ jobs:
           - name: Build BlackDuck Docker Images with dotnet core
             dockerfile: 8/dotnetcore-3.1.302
             tags: 8-dotnetcore 8-dotnetcore-3 8-dotnetcore-3.1 8.1-dotnetcore 8.1-dotnetcore-3.1 8.1.1-dotnetcore 8.1.1-dotnetcore-3.1.302
-          - name: Build BlackDuck Docker Images with docker detector
-            dockerfile: 8/docker
-            tags: 8-docker 8.1-docker 8.1.1-docker
     steps:
       - uses: actions/checkout@v3
       - name: ${{ matrix.name }}
