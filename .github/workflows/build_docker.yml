@@ -7,13 +7,14 @@ env:
   REGISTRY_TOKEN: '${{ secrets.DOCKER_PASSWORD }}'
   DOCKER_ORGANIZATION: philipssoftware
   GITHUB_ORGANIZATION: philips-software
-  COSIGN_PRIVATE_KEY: '${{ secrets.COSIGN_PRIVATE_KEY }}'
-  COSIGN_PASSWORD: '${{ secrets.COSIGN_PASSWORD }}'
-  COSIGN_PUBLIC_KEY: '${{ secrets.COSIGN_PUBLIC_KEY  }}'
+  KEYLESS: true
 
 jobs:
   build_blackduck-7:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+
     strategy:
       matrix:
         include:
@@ -85,7 +86,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: ${{ matrix.name }}
-        uses: philips-software/docker-ci-scripts@v4.5.3
+        uses: philips-software/docker-ci-scripts@main
         with:
           dockerfile: ${{ matrix.dockerfile }}
           image-name: blackduck
