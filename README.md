@@ -18,7 +18,15 @@ Current versions available:
 │   ├── dotnetcore-3.0.101
 │   ├── dotnetcore-3.1.102
 │   └── dotnetcore-3.1.302
-│   └── docker
+├── 8
+│   ├── golang
+│   ├── java
+│   ├── node
+│   ├── python
+│   ├── dotnetcore-2.2.110
+│   ├── dotnetcore-3.0.101
+│   ├── dotnetcore-3.1.102
+│   └── dotnetcore-3.1.302
 ```
 
 ## Usage
@@ -27,7 +35,7 @@ Images can be found on [https://hub.docker.com/r/philipssoftware/blackduck/](htt
 
 ``` bash
 docker run philipssoftware/blackduck:7 /app/detect.sh --help
-docker run philipssoftware/blackduck:7 /app/detect.sh -hv 
+docker run philipssoftware/blackduck:7 /app/detect.sh -hv
 ```
 
 In order to analyse a project use the following structure.
@@ -56,7 +64,7 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock --network="host" philips
 mkdir $(pwd)/shared
 docker run -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):$(pwd) --network="host" -w $(pwd) philipssoftware/blackduck:7-docker \
   /airgap/packaged-inspectors/docker/blackduck-docker-inspector.sh --blackduck.url=<your-blackduck-url> --blackduck.api.token=<your-token> \
-  --detect.policy.check=true --detect.project.name=<your-project-name> --detect.project.version.name=<your-version> \ 
+  --detect.policy.check=true --detect.project.name=<your-project-name> --detect.project.version.name=<your-version> \
   --detect.docker.image=<your-image> --shared.dir.path.local=$(pwd)/shared
 ```
 
@@ -82,7 +90,7 @@ The images obviously contain blackduck and java8, but also two other files:
 ### REPO
 
 This file has a url to the REPO with specific commit-sha of the build.
-Example: 
+Example:
 
 ```
 $ docker run philipssoftware/blackduck:6 cat REPO
@@ -91,7 +99,7 @@ https://github.com/philips-software/docker-blackduck/tree/facb2271e5a563e5d6f65c
 
 ### TAGS
 
-This contains all the similar tags at the point of creation. 
+This contains all the similar tags at the point of creation.
 
 ```
 $ docker run philipssoftware/blackduck:6 cat TAGS
@@ -128,6 +136,10 @@ You can use this to pin down a version of the container from an existing develop
 
 ### blackduck with docker detector
 - `blackduck:docker`, `blackduck:7-docker`, `blackduck:7.14-docker`, `blackduck:7.14.0-docker` [7/docker/Dockerfile](7/docker/Dockerfile)
+
+### blackduck version 8.
+
+All images above are also available for version 8.1.1, but since some heavily used deprecated arguments, we did not make 8 the `latest` version yet.
 
 ## Why
 
@@ -176,7 +188,7 @@ This module is part of the Philips Forest.
                                                     / __\__  _ __ ___  ___| |_
                                                    / _\/ _ \| '__/ _ \/ __| __|
                                                   / / | (_) | | |  __/\__ \ |_
-                                                  \/   \___/|_|  \___||___/\__|  
+                                                  \/   \___/|_|  \___||___/\__|
 
                                                                  Infrastructure
 ```

@@ -12,7 +12,7 @@ env:
   COSIGN_PUBLIC_KEY: '${{ secrets.COSIGN_PUBLIC_KEY  }}'
 
 jobs:
-  build_blackduck:
+  build_blackduck-7:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -41,9 +41,47 @@ jobs:
           - name: Build BlackDuck Docker Images with dotnet core
             dockerfile: 7/dotnetcore-3.1.302
             tags: dotnetcore 7-dotnetcore 7-dotnetcore-3 7-dotnetcore-3.1 7.14-dotnetcore 7.14-dotnetcore-3.1 7.14.0-dotnetcore 7.14.0-dotnetcore-3.1.302
-          - name: Build BlackDuck Docker Images with docker detector
-            dockerfile: 7/docker
-            tags: docker 7-docker 7.14-docker 7.14.0-docker
+    steps:
+      - uses: actions/checkout@v3
+      - name: ${{ matrix.name }}
+        uses: philips-software/docker-ci-scripts@v4.5.1
+        with:
+          dockerfile: ${{ matrix.dockerfile }}
+          image-name: blackduck
+          tags: ${{ matrix.tags }}
+          push-branches: main
+          slsa-provenance: true
+          sign: true
+          sbom: true
+  build_blackduck-8:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - name: Build BlackDuck Docker Images with java
+            dockerfile: 8/java
+            tags: 8 8.1 8.1.1
+          - name: Build BlackDuck Docker Images with node
+            dockerfile: 8/node
+            tags: 8-node 8.1-node 8.1.1-node
+          - name: Build BlackDuck Docker Images with python
+            dockerfile: 8/python
+            tags: 8-python 8.1-python 8.1.1-python
+          - name: Build BlackDuck Docker Images with golang
+            dockerfile: 8/golang
+            tags: 8-golang 8.1-golang 8.1.1-golang
+          - name: Build BlackDuck Docker Images with dotnet core 2.2.110
+            dockerfile: 8/dotnetcore-2.2.110
+            tags: 8-dotnetcore-2.2 8.1-dotnetcore-2.2.110 8.1.1-dotnetcore-2.2.110
+          - name: Build BlackDuck Docker Images with dotnet core
+            dockerfile: 8/dotnetcore-3.0.101
+            tags: 8.1-dotnetcore-3.0 8.1.1-dotnetcore-3.0.101
+          - name: Build BlackDuck Docker Images with dotnet core
+            dockerfile: 8/dotnetcore-3.1.102
+            tags: 8.1-dotnetcore-3.1.102 8.1.1-dotnetcore-3.1.102
+          - name: Build BlackDuck Docker Images with dotnet core
+            dockerfile: 8/dotnetcore-3.1.302
+            tags: 8-dotnetcore 8-dotnetcore-3 8-dotnetcore-3.1 8.1-dotnetcore 8.1-dotnetcore-3.1 8.1.1-dotnetcore 8.1.1-dotnetcore-3.1.302
     steps:
       - uses: actions/checkout@v3
       - name: ${{ matrix.name }}
