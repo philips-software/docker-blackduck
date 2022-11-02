@@ -12,8 +12,10 @@ env:
 jobs:
   build_blackduck-7:
     runs-on: ubuntu-latest
+    
     permissions:
       id-token: write
+      packages: write
 
     strategy:
       matrix:
@@ -54,8 +56,14 @@ jobs:
           slsa-provenance: true
           sign: true
           sbom: true
+  
   build_blackduck-8:
     runs-on: ubuntu-latest
+    
+    permissions:
+      id-token: write
+      packages: write
+    
     strategy:
       matrix:
         include:
