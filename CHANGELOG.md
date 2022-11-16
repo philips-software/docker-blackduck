@@ -6,6 +6,7 @@ The version numbers are related to the version of blackduck in the image appende
 
 ### Changed
 
+- Bumped detect version to 8.2.0
 - Use new arguments for docker-ci-scripts
 - Update version of docker-ci-scripts
 - Bumped detect version to 7.14.0
