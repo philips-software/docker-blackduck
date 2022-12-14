@@ -1,4 +1,4 @@
-ARG detect_latest_release_version=8.3.0
+ARG detect_latest_release_version=8.4.0
 
 FROM philipssoftware/node:14.17.0-buster-slim-java
 
