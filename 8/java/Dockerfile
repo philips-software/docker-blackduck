@@ -1,4 +1,4 @@
-ARG detect_latest_release_version=8.4.0
+ARG detect_latest_release_version=8.5.0
 
 FROM alpine:latest AS builder
 ARG detect_latest_release_version
@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 ARG detect_latest_release_version
-ARG MAVEN_VERSION=3.8.4
+ARG MAVEN_VERSION=3.8.7
 ENV PATH /opt/apache-maven/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV M2_HOME /opt/apache-maven
 ENV MAVEN_HOME /opt/apache-maven
