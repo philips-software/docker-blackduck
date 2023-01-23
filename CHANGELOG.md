@@ -6,6 +6,8 @@ The version numbers are related to the version of blackduck in the image appende
 
 ### Changed
 
+- Bumped detect version to 8.5.0 
+- Bumped version of Maven to 3.8.7
 - Bumped detect version to 8.4.0
 - Bumped detect version to 8.3.0
 - Bumped detect version to 8.2.0
